@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+//import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private route: Router){
+  }
+
+  goToPage(){
+    this.route.navigate(["/tabs/tab2"]);
+  }
+  /*constructor(private navController:NavController) {}
+
+  goToPage() {
+    this.navController.setRoot("/pages/page1.html");
+  }*/
 
 }
