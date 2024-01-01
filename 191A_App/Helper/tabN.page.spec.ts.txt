@@ -1,0 +1,26 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+
+import { Insert2 } from 'Insert3';
+
+describe('Insert2', () => {
+  let component: Insert2;
+  let fixture: ComponentFixture<Insert2>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [Insert2],
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(Insert2);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

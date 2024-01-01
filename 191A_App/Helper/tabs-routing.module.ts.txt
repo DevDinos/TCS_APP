@@ -1,0 +1,4 @@
+{
+path: 'Insert0',
+loadChildren: () => import('Insert1').then(m => m.Insert6)
+},
