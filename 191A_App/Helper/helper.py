@@ -1,11 +1,5 @@
 import os
 
-
-#ToDo
-    #1. Determine what will be passed as compName
-    #2. How many transformations to compName are needed (ex. Tab1, Tab 1, etc.) to gen all files.
-    #3. Make sure all input files are kept open for duration of file writing.
-
 '''
 #Insert Mappings
 
@@ -73,6 +67,7 @@ iDict = {
 iDictKeys = iDict.keys()
 
 def generateTab(name):
+    os.mkdir(os.getcwd() + "/" + "Output" + "/" + name)
     for file in os.listdir():
         if file.endswith(".txt"):
             with open(file, "r") as inputFile:
@@ -90,15 +85,15 @@ def generateTab(name):
                     #print(file)
                     fList = file.split(".")
                     if "-" in fList[0]:
-                        file = "{0}-{1}.{2}".format(name, fList[0].split("-")[1], ".".join(fList[1:]))
+                        file = "{0}-{1}.{2}".format(name, fList[0].split("-")[1], ".".join(fList[1:-1]))
                     else:
-                        file = "{0}.{1}".format(name, ".".join(fList[1:]))
+                        file = "{0}.{1}".format(name, ".".join(fList[1:-1]))
                     #print("\t" + file)
-                    with open(file, "w") as outputFile:
+                    with open("Output/{0}/{1}".format(name, file), "w") as outputFile:
                         for line in inputFile:
                             for key in iDictKeys:
                                 if key in line:
-                                    line.replace(key, iDict[key](name))
+                                    line = line.replace(key, iDict[key](name))
                             outputFile.writelines(line)
 
 
