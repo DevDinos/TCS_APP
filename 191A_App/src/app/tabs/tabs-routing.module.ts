@@ -28,8 +28,16 @@ const routes: Routes = [
         loadChildren: () => import('../tab5/tab5.module').then(m => m.Tab5PageModule)
       },
       {
-        path: 'Bob',
-        loadChildren: () => import('../Bob/Bob.module').then(m => m.BobPageModule)
+        path: 'tab6',
+        loadChildren: () => import('../tab6/tab6.module').then(m => m.tab6PageModule)
+      },
+      {
+        path: 'tab7',
+        loadChildren: () => import('../tab7/tab7.module').then(m => m.tab7PageModule)
+      },
+      {
+        path: 'tab8',
+        loadChildren: () => import('../tab8/tab8.module').then(m => m.tab8PageModule)
       },
       {
         path: '',

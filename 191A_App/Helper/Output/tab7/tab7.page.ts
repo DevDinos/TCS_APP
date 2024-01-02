@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 //import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'app-Bob',
-  templateUrl: 'Bob.page.html',
-  styleUrls: ['../Bob/Bob.module0']
+  selector: 'app-tab7',
+  templateUrl: 'tab7.page.html',
+  styleUrls: ['../tab7/tab7.module0']
 })
-export class BobPage {
+export class tab7Page {
 
   constructor(private route: Router){
   }

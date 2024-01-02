@@ -77,7 +77,7 @@ def generateTab(name):
                         for key in iDictKeys:
                             if key in line:
                                 line = line.replace(key, iDict[key](name))
-                        tabsOutput += (line + "\n")
+                        tabsOutput += (line)
                     print(tabsOutput)
 
                 else:
@@ -95,53 +95,15 @@ def generateTab(name):
                                 if key in line:
                                     line = line.replace(key, iDict[key](name))
                             outputFile.writelines(line)
-
-
-'''
-Delete
-def printTabCode(compName):
-    pass
-
-def generateModule(compName):
-    pass
-
-def generateRoutingModule(compName):
-    pass
-
-def generatePage(compName):
-    pass
-
-def generateSpec(compName):
-    pass
-
-def generateHtml(compName):
-    with open("{0}.page.html".format(compName), "w") as outputFile:
-        with open("htmlTemplate.txt", "r") as inputFile:
-            for line in inputFile:
-                if "Replace0" in line:
-                    line = line.split("Replace0")
-                    line = "{0} {1} {2}".format(line[0], compName, line[1])
-                outputFile.write(line)
-
-
-def generateTabCode(compName):
-    pass
-'''
     
-if __name__ == "__main__":
-    #Insert strings representing component names in components list!
-    #components = []
-    #for component in components:
-    #    printTabCode(component)
-    #    generateModule(component)
-    #    generateRoutingModule(component)
-    #    generatePage(component)
-    #    generateSpec(component)
-    #    generateHtml(component)
-    #    generateTabCode(component)
-    
-    generateTab("Bob")
+if __name__ == "__main__":   
+    tabs = ["tab6", "tab7", "tab8"]
 
-    #Once finished, component folders are placed under Helper > Output are ready as is
-    # and can be dragged and dropped into src > app.
+    for tab in tabs:
+        generateTab(tab)
+
     print("\nFinished!")
+    
+    #Once finished: 
+    # 1. Drag tab folders in ../Helper/Output into ../src/app
+    # 2. Copy paste code generated in terminal into ../tabs/tabs-routing.module.ts

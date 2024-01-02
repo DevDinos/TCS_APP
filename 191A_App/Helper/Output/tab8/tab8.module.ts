@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BobPage } from './Bob.page';
+import { tab8Page } from './tab8.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { BobPageRoutingModule } from './Bob-routing.module';
+import { tab8PageRoutingModule } from './tab8-routing.module';
 
 @NgModule({
   imports: [
@@ -13,8 +13,8 @@ import { BobPageRoutingModule } from './Bob-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    BobPageRoutingModule
+    tab8PageRoutingModule
   ],
-  declarations: [BobPage]
+  declarations: [tab8Page]
 })
-export class BobPageModule {}
+export class tab8PageModule {}
