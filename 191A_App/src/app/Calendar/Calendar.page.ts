@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 //import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'Insert8',
-  templateUrl: 'Insert9',
-  styleUrls: ['InsertA']
+  selector: 'app-Calendar',
+  templateUrl: 'Calendar.page.html',
+  styleUrls: ['Calendar.page.scss']
 })
-export class Insert2 {
+export class CalendarPage {
 
   constructor(private route: Router){
   }

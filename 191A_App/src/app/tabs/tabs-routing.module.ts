@@ -28,16 +28,52 @@ const routes: Routes = [
         loadChildren: () => import('../tab5/tab5.module').then(m => m.Tab5PageModule)
       },
       {
-        path: 'tab6',
-        loadChildren: () => import('../tab6/tab6.module').then(m => m.tab6PageModule)
+        path: 'HomePage',
+        loadChildren: () => import('../HomePage/HomePage.module').then(m => m.HomePagePageModule)
       },
       {
-        path: 'tab7',
-        loadChildren: () => import('../tab7/tab7.module').then(m => m.tab7PageModule)
+          path: 'Calendar',
+          loadChildren: () => import('../Calendar/Calendar.module').then(m => m.CalendarPageModule)
       },
       {
-        path: 'tab8',
-        loadChildren: () => import('../tab8/tab8.module').then(m => m.tab8PageModule)
+          path: 'Resources',
+          loadChildren: () => import('../Resources/Resources.module').then(m => m.ResourcesPageModule)
+      },
+      {
+          path: 'Helpline',
+          loadChildren: () => import('../Helpline/Helpline.module').then(m => m.HelplinePageModule)
+      },
+      {
+          path: 'Forum',
+          loadChildren: () => import('../Forum/Forum.module').then(m => m.ForumPageModule)
+      },
+      {
+          path: 'Account',
+          loadChildren: () => import('../Account/Account.module').then(m => m.AccountPageModule)
+      },
+      {
+          path: 'Games',
+          loadChildren: () => import('../Games/Games.module').then(m => m.GamesPageModule)
+      },
+      {
+          path: 'Settings',
+          loadChildren: () => import('../Settings/Settings.module').then(m => m.SettingsPageModule)
+      },
+      {
+          path: 'CheckIn',
+          loadChildren: () => import('../CheckIn/CheckIn.module').then(m => m.CheckInPageModule)
+      },
+      {
+          path: 'Login',
+          loadChildren: () => import('../Login/Login.module').then(m => m.LoginPageModule)
+      },
+      {
+          path: 'AccountCreation',
+          loadChildren: () => import('../AccountCreation/AccountCreation.module').then(m => m.AccountCreationPageModule)
+      },
+      {
+          path: 'Welcome',
+          loadChildren: () => import('../Welcome/Welcome.module').then(m => m.WelcomePageModule)
       },
       {
         path: '',

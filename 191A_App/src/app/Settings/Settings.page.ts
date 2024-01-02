@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 //import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'Insert8',
-  templateUrl: 'Insert9',
-  styleUrls: ['InsertA']
+  selector: 'app-Settings',
+  templateUrl: 'Settings.page.html',
+  styleUrls: ['Settings.page.scss']
 })
-export class Insert2 {
+export class SettingsPage {
 
   constructor(private route: Router){
   }

@@ -1,4 +1,5 @@
 import os
+import re
 
 '''
 #Insert Mappings
@@ -16,6 +17,7 @@ import os
 9 - tabN.page.html
 10 - tabN.page.scss
 '''
+#Warning - Make sure Insert only has one trailing identifier (ex. InsertN)
 
 def Insert0(name):
     return name
@@ -47,7 +49,7 @@ def Insert8(name):
 def Insert9(name):
     return "{0}.page.html".format(name)
 
-def Insert10(name):
+def InsertA(name):
     return "{0}.page.scss".format(name)
 
 iDict = {
@@ -61,7 +63,7 @@ iDict = {
     "Insert7" : Insert7,
     "Insert8" : Insert8,
     "Insert9" : Insert9,
-    "Insert10" : Insert10
+    "InsertA" : InsertA
 }
 
 iDictKeys = iDict.keys()
@@ -92,12 +94,28 @@ def generateTab(name):
                     with open("Output/{0}/{1}".format(name, file), "w") as outputFile:
                         for line in inputFile:
                             for key in iDictKeys:
+                                pass
                                 if key in line:
                                     line = line.replace(key, iDict[key](name))
                             outputFile.writelines(line)
     
 if __name__ == "__main__":   
-    tabs = ["tab6", "tab7", "tab8"]
+
+    #Warning - tab names should only consist of alphanumeric characters.
+    tabs = [
+            "HomePage",
+            "Calendar",
+            "Resources",
+            "Helpline",
+            "Forum",
+            "Account",
+            "Games",
+            "Settings",
+            "CheckIn",
+            "Login",
+            "AccountCreation",
+            "Welcome",
+             ]
 
     for tab in tabs:
         generateTab(tab)
