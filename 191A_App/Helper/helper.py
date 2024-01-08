@@ -102,6 +102,11 @@ def generateTab(name):
 if __name__ == "__main__":   
 
     #Warning - tab names should only consist of alphanumeric characters.
+    #To Create Pages:
+    # 1. Enter page names as strings in tabs list.
+    # 2. cd into ../Helper
+    # 3. run python helper.py script
+
     tabs = [
             "enterPageNameHere"
              ]
@@ -112,5 +117,5 @@ if __name__ == "__main__":
     print("\nFinished!")
     
     #Once finished: 
-    # 1. Drag tab folders in ../Helper/Output into ../src/app
+    # 1. Drag page folders in ../Helper/Output into ../src/app
     # 2. Copy paste code generated in terminal into ../tabs/tabs-routing.module.ts
