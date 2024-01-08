@@ -7,9 +7,31 @@ import { Router } from '@angular/router';
   templateUrl: 'InitialSetup.page.html',
   styleUrls: ['InitialSetup.page.scss']
 })
-export class InitialSetupPage {
+export class InitialSetupPage{
+  pageIndex: number = 0;
 
   constructor(private route: Router){
+
   }
 
+  forward(){
+    if (this.pageIndex < 3){
+      this.pageIndex++;
+    }
+  }
+
+  backward(){
+    if (this.pageIndex > 0){
+      this.pageIndex--;
+    }
+  }
+
+  skipSetup(){
+    if (this.pageIndex == 0){
+      this.pageIndex = 3;
+    }
+    else{
+      this.forward()
+    }
+  }
 }
