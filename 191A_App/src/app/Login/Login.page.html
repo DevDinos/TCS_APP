@@ -7,11 +7,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Login page"></app-explore-container>
+<ion-button href="/tabs/Welcome">Back
+  <ion-icon name="arrow-back-outline"></ion-icon>
+</ion-button>
+
+<ion-list>
+  <ion-item>
+    <ion-input placeholder="Enter Username or Email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Enter Password"></ion-input>
+  </ion-item>
+</ion-list>
+
+<ion-button href="/tabs/HomePage">Login</ion-button>
+
 </ion-content>

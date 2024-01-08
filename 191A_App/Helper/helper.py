@@ -103,18 +103,7 @@ if __name__ == "__main__":
 
     #Warning - tab names should only consist of alphanumeric characters.
     tabs = [
-            "HomePage",
-            "Calendar",
-            "Resources",
-            "Helpline",
-            "Forum",
-            "Account",
-            "Games",
-            "Settings",
-            "CheckIn",
-            "Login",
-            "AccountCreation",
-            "Welcome",
+            "InitialSetup"
              ]
 
     for tab in tabs:

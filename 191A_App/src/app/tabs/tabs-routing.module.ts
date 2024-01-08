@@ -76,6 +76,10 @@ const routes: Routes = [
           loadChildren: () => import('../Welcome/Welcome.module').then(m => m.WelcomePageModule)
       },
       {
+        path: 'InitialSetup',
+        loadChildren: () => import('../InitialSetup/InitialSetup.module').then(m => m.InitialSetupPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/Welcome',
         pathMatch: 'full'
