@@ -103,7 +103,7 @@ if __name__ == "__main__":
 
     #Warning - tab names should only consist of alphanumeric characters.
     tabs = [
-            "InitialSetup"
+            "enterPageNameHere"
              ]
 
     for tab in tabs:
