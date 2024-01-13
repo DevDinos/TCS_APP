@@ -16,6 +16,17 @@
     class that will display on the console a message with the date selected. 
     This might be helpful since it shows the way the string looks.-->
   <ion-datetime [(ngModel)]="selectedDate" (ionChange)="onDateSelectionChange($event)"></ion-datetime>
+  <ion-list>
+    <ion-card *ngFor="let event of selectedEvents">
+      <ion-card-header>
+        <ion-card-subtitle>Event</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{event}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
   
 
   
