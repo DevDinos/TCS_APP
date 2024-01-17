@@ -16,11 +16,11 @@ export class CalendarPage {
 
   formattedDate: string = '';
 
-  selectedEvents: string[] = [];
+  selectedEvents: any[] = [];
 
   constructor(private route: Router) { 
-    this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House", 
-                                          "3:00pm;Book club meeting at Rick's place."]);
+    this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House; Sunrise St, Sunset Beach, CA, USA", 
+                                          "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA"]);
   }
 
   onDateSelectionChange(event: any) {
@@ -29,8 +29,14 @@ export class CalendarPage {
     this.formattedDate = (new Date(Date.parse(this.selectedDate))).toDateString();
     console.log("Selected Date (Parsed):", this.formattedDate);
     if (this.allEvents.has(this.formattedDate)){
-      this.selectedEvents = this.allEvents.get(this.formattedDate)!;
-      console.log("Found!");
+      //this.selectedEvents = this.allEvents.get(this.formattedDate)!;
+      //console.log("Found!");
+      let onEvent = this.allEvents.get(this.formattedDate)
+      for (let i = 0; i < onEvent!.length; i++){
+        let temp = onEvent![i].split(";");
+        this.selectedEvents.push(temp);
+      }
+
     }
   }
 

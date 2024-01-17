@@ -19,11 +19,15 @@
   <ion-list>
     <ion-card *ngFor="let event of selectedEvents">
       <ion-card-header>
-        <ion-card-subtitle>Event</ion-card-subtitle>
+        <ion-card-subtitle><b>Event</b></ion-card-subtitle>
       </ion-card-header>
     
       <ion-card-content>
-        {{event}}
+        <b>Time:</b> {{event[0]}}
+        <br>
+        <b>Description:</b> {{event[1]}}
+        <br>
+        <b>Location:</b> {{event[2]}}
       </ion-card-content>
     </ion-card>
   </ion-list>
