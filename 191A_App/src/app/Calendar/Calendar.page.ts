@@ -18,6 +18,8 @@ export class CalendarPage {
 
   selectedEvents: any[] = [];
 
+  myDate: String = new Date().toISOString();
+
   constructor(private route: Router) { 
     this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House; Sunrise St, Sunset Beach, CA, USA", 
                                           "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA"]);
