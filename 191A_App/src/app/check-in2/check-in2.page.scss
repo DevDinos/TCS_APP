@@ -1,0 +1,32 @@
+.checkin-size{
+    background: white !important;
+    padding-top: 30%;
+    text-align: center;
+    display: flex; /* Add this line to make it a flex container */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align:center;
+    padding-top:10%;
+}
+
+h3{
+    text-align:center;
+    padding-top:10%;
+}
+
+.complete-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+img{
+    width: 100%;
+}

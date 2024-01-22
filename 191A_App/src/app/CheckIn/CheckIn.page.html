@@ -1,15 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Sunrise Connections
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-button href="/tabs/HomePage">Back
-    <ion-icon name="arrow-back-outline"></ion-icon>
-  </ion-button>
-
-  <app-explore-container name="CheckIn page"></app-explore-container>
+<ion-content *ngIf="showPart1">
+  <ion-content class="checkin-size">
+    <h1>Daily Check In</h1>
+    <h3>How are you today?</h3>
+    <ion-row>
+      <ion-col size="4">
+        <ion-icon name="sad" class="mood-icon" size="large" (click)="selectMood('sad')"></ion-icon>
+      </ion-col>
+      <ion-col size="4">
+        <ion-icon name="ellipsis-horizontal" class="mood-icon" size="large" (click)="selectMood('neutral')"></ion-icon>
+      </ion-col>
+      <ion-col size="4">
+        <ion-icon name="happy" class="mood-icon" size="large" (click)="selectMood('happy')"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-button class="submit-button" (click)="showPart2()">SUBMIT</ion-button>
+    <ion-button class="submit-button" (click)="showPart2()">SKIP</ion-button>
+  </ion-content>
 </ion-content>

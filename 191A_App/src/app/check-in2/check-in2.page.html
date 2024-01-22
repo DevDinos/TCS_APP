@@ -1,0 +1,12 @@
+<ion-content *ngIf="showPart2">
+  <ion-content class="checkin-size">
+    <img [src]="imageSelected" alt="Random Image">
+    <h1 *ngIf="selectedMood === 'sad'">We're sorry to hear that, we hope you feel better!</h1>
+    <h1 *ngIf="selectedMood === 'neutral'">Well, we hope you have a great time here!</h1>
+    <h1 *ngIf="selectedMood === 'happy'">Glad to hear that! Hope your day stays bright!</h1>
+    <p>Enjoy your time here!</p>
+
+    <ion-button class="complete-button" (click)="complete()">Complete</ion-button>
+    <ion-button class="complete-button" (click)="complete()">Skip</ion-button>
+  </ion-content>
+</ion-content>
