@@ -15,7 +15,7 @@ export class HomePagePage {
   constructor(private route: Router, private modalCtrl: ModalController){
     console.log('HomePagePage constructor');
   }
-  async openModal() {
+  async ionViewDidEnter() {
     console.log('Starting to create modal');
     const modal = await this.modalCtrl.create({
       component: CheckInPage,   
