@@ -14,7 +14,8 @@
   </ion-button>
   <!-- search bar -->
   <ion-searchbar show-clear-button="never"></ion-searchbar>
-  <!-- ion card -->
+
+  <!--ion-card filler 1-->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Checkers</ion-card-title>
@@ -29,7 +30,8 @@
     <ion-button fill="clear">See responses</ion-button>
     <ion-button fill="clear">Comment</ion-button>
   </ion-card>
-  <!-- ion card -->
+  
+   <!--ion-card filler 2-->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Arts and crafts</ion-card-title>
@@ -44,14 +46,25 @@
     <ion-button fill="clear">See responses</ion-button>
     <ion-button fill="clear">Comment</ion-button>
   </ion-card>
+
+  <!--dynamic ion-cards for posts-->
+  <ion-card *ngFor="let post of posts">
+    <ion-card-header>
+      <ion-card-title>{{ post.subject }}</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ post.comment }}
+    </ion-card-content>
+  
+    <ion-button fill="clear"><ion-icon></ion-icon>Like</ion-button>
+    <ion-button fill="clear">See responses</ion-button>
+    <ion-button fill="clear">Comment</ion-button>
+  </ion-card>
+  
   <!-- add post fab -->
   <ion-fab slot="fixed" horizontal="center" vertical="bottom">
-    <!-- <ion-button (click)="presentPopover($event)">Open Popover</ion-button>
-    -->
-    <!-- <ion-button id="present-alert" (click)="presentAlert()">Open Alert</ion-button>
-  </ion-fab> -->
-  <!-- <ion-button id="present-alert" (click)="presentAlert($event)">Open Alert</ion-button> -->
-  <!-- modal -->
   <ion-button id="open-modal" expand="block">Make new post</ion-button>
   <!-- <p>{{ message }}</p> -->
   <ion-modal trigger="open-modal" >
@@ -70,17 +83,18 @@
       <ion-content class="ion-padding">
         <ion-item>
           <ion-label position="stacked">Subject</ion-label>
-          <ion-input type="text" placeholder="Subject" ></ion-input>
+          <ion-input type="text" placeholder="Subject" [(ngModel)]="subject" ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Comment</ion-label>
-          <ion-input type="text" placeholder="What is on your mind" ></ion-input>
+          <ion-input type="text" placeholder="What is on your mind" [(ngModel)]="comment"></ion-input>
         </ion-item>
         <ion-button id="cancelButton" (click)="cancel()">Cancel</ion-button>
         <ion-button id="submitButton" (click)="createPost()">Submit</ion-button>
       </ion-content>
     </ng-template>
   </ion-modal>
+
 </ion-fab>
   
   <app-explore-container name="Forum page"></app-explore-container>
