@@ -6,6 +6,7 @@ import { ForumPage } from './Forum.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { ForumPageRoutingModule } from './Forum-routing.module';
+import { MyAlertComponent } from '../my-alert/my-alert.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { ForumPageRoutingModule } from './Forum-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    ForumPageRoutingModule
+    ForumPageRoutingModule,
   ],
   declarations: [ForumPage]
 })

@@ -1,15 +1,87 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Sunrise Connections
+      Forum Page
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button href="/tabs/HomePage">Back
+  <!-- back button -->
+  <ion-button href="/tabs/HomePage">
     <ion-icon name="arrow-back-outline"></ion-icon>
+    Back
   </ion-button>
+  <!-- search bar -->
+  <ion-searchbar show-clear-button="never"></ion-searchbar>
+  <!-- ion card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Checkers</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      I invite Checkers enthusiasts to discuss with me!
+    </ion-card-content>
 
+    <ion-button fill="clear"><ion-icon></ion-icon>Like</ion-button>
+    <ion-button fill="clear">See responses</ion-button>
+    <ion-button fill="clear">Comment</ion-button>
+  </ion-card>
+  <!-- ion card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Arts and crafts</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      I invite arts and crafts enthusiasts to discuss with me!
+    </ion-card-content>
+
+    <ion-button fill="clear"><ion-icon></ion-icon>Like</ion-button>
+    <ion-button fill="clear">See responses</ion-button>
+    <ion-button fill="clear">Comment</ion-button>
+  </ion-card>
+  <!-- add post fab -->
+  <ion-fab slot="fixed" horizontal="center" vertical="bottom">
+    <!-- <ion-button (click)="presentPopover($event)">Open Popover</ion-button>
+    -->
+    <!-- <ion-button id="present-alert" (click)="presentAlert()">Open Alert</ion-button>
+  </ion-fab> -->
+  <!-- <ion-button id="present-alert" (click)="presentAlert($event)">Open Alert</ion-button> -->
+  <!-- modal -->
+  <ion-button id="open-modal" expand="block">Make new post</ion-button>
+  <!-- <p>{{ message }}</p> -->
+  <ion-modal trigger="open-modal" >
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <!-- <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons> -->
+          <ion-title>Make new post</ion-title>
+          <!-- <ion-buttons slot="end">
+            <ion-button (click)="cancel()" [strong]="true">Submit</ion-button>
+          </ion-buttons> -->
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-label position="stacked">Subject</ion-label>
+          <ion-input type="text" placeholder="Subject" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Comment</ion-label>
+          <ion-input type="text" placeholder="What is on your mind" ></ion-input>
+        </ion-item>
+        <ion-button id="cancelButton" (click)="cancel()">Cancel</ion-button>
+        <ion-button id="submitButton" (click)="createPost()">Submit</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-fab>
+  
   <app-explore-container name="Forum page"></app-explore-container>
 </ion-content>
