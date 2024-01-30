@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { ForumPageRoutingModule } from './Forum-routing.module';
 import { MyAlertComponent } from '../my-alert/my-alert.component';
+import { ResponsesPageModule } from './responses/responses.module';
 
 @NgModule({
   imports: [
