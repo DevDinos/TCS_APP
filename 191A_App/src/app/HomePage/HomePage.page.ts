@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CheckInPage } from '../CheckIn/CheckIn.page';
-//import { NavController } from 'ionic-angular';
-
 @Component({
   selector: 'app-HomePage',
   templateUrl: 'HomePage.page.html',

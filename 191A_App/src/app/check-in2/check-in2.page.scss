@@ -13,9 +13,8 @@ h1{
     padding-top:10%;
 }
 
-h3{
-    text-align:center;
-    padding-top:10%;
+.first-content{
+    height: 30%;
 }
 
 .complete-button{
@@ -27,6 +26,20 @@ h3{
     margin: 0 auto;
 }
 
+.skip-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
 img{
-    width: 100%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.transparent{
+    --background:transparent;
 }

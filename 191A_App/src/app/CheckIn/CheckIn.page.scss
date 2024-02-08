@@ -8,14 +8,25 @@
     align-items: center;
 }
 
+.mood{
+    font-size: 36px;
+}
+
 h1{
     text-align:center;
-    padding-top:10%;
+    padding-top:20%;
+    font-size: 250%;
+    
+}
+
+.first-content{
+    height: 30%;
 }
 
 h3{
     text-align:center;
-    padding-top:10%;
+    // padding-top:10%;
+    font-size: 175%;
 }
 
 .submit-button{
@@ -25,4 +36,20 @@ h3{
     padding-top: 5%;
     width: 50%;
     margin: 0 auto;
+}
+
+.skip-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.transparent{
+    --background:transparent;
+}
+
+.mood-selected{
+    color: green;
 }
