@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Sunrise Connections
+      Sunrise Connections Event Calendar
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,5 +11,31 @@
     <ion-icon name="arrow-back-outline"></ion-icon>
   </ion-button>
 
-  <app-explore-container name="Calendar page"></app-explore-container>
+  <!--Starting the Calendar Here:-->
+  <!--The ngModel is equal to a variable inside the page.ts's class, and ionchange is pointing to a function within the same \
+    class that will display on the console a message with the date selected. 
+    This might be helpful since it shows the way the string looks.-->
+  <ion-datetime [(ngModel)]="selectedDate" [(ngModel)]="myDate" (ionChange)="onDateSelectionChange($event)"></ion-datetime>
+  <ion-list>
+    <ion-card *ngFor="let event of selectedEvents">
+      <ion-card-header>
+        <ion-card-subtitle><b>Event</b></ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <b>Time:</b> {{event[0]}}
+        <br>
+        <b>Description:</b> {{event[1]}}
+        <br>
+        <b>Location:</b> {{event[2]}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  
+
+  
+  
+
+  <!--<ion-datetime></ion-datetime>-->
+  <!--<app-explore-container name="Calendar page"></app-explore-container>-->
 </ion-content>
