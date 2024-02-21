@@ -1,15 +1,100 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Sunrise Connections
+      Forum Page
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button href="/tabs/HomePage">Back
+  <!-- back button -->
+  <ion-button href="/tabs/HomePage">
     <ion-icon name="arrow-back-outline"></ion-icon>
+    Back
   </ion-button>
+  <!-- search bar -->
+  <ion-searchbar show-clear-button="never"></ion-searchbar>
+  
+    <ion-button id="newPostButton" size="large">Make new post</ion-button>
+  
 
+  <!--ion-card filler 1-->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Checkers</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      I invite Checkers enthusiasts to discuss with me!
+    </ion-card-content>
+
+    <ion-button (click)="changeColor()" class="likeButton" [class.clicked]="isClicked" fill="solid">Like <ion-icon  name="thumbs-up-outline"></ion-icon></ion-button>
+    <ion-button class="responseButton" href="tabs/Forum/responses" fill="solid">See responses</ion-button>
+  </ion-card>
+  
+   <!--ion-card filler 2-->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Arts and crafts</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      I invite arts and crafts enthusiasts to discuss with me!
+    </ion-card-content>
+
+    <ion-button class="likeButton" fill="solid">Like <ion-icon slot="end" name="thumbs-up-outline"></ion-icon></ion-button>
+    <ion-button class="responseButton" href="tabs/Forum/responses" fill="solid">See responses</ion-button>
+  </ion-card>
+
+  <!--dynamic ion-cards for posts-->
+  <ion-card *ngFor="let post of posts">
+    <ion-card-header>
+      <ion-card-title>{{ post.subject }}</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ post.comment }}
+    </ion-card-content>
+  
+    <ion-button class="likeButton" fill="solid">Like <ion-icon slot="end" name="thumbs-up-outline"></ion-icon></ion-button>
+    <ion-button class="responseButton" href="tabs/Forum/responses" fill="solid">See responses</ion-button>
+  </ion-card>
+  
+  <!-- add post fab -->
+  
+  <!-- <p>{{ message }}</p> -->
+  <ion-modal trigger="newPostButton" >
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <!-- <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons> -->
+          <ion-title>Make new post</ion-title>
+          <!-- <ion-buttons slot="end">
+            <ion-button (click)="cancel()" [strong]="true">Submit</ion-button>
+          </ion-buttons> -->
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-label position="stacked">Subject</ion-label>
+          <ion-input type="text" placeholder="Subject" [(ngModel)]="subject" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Text</ion-label>
+          <ion-textarea type="text" placeholder="What is on your mind" [(ngModel)]="comment"></ion-textarea>
+        </ion-item>
+        <ion-button id="cancelButton" (click)="cancel()">Cancel</ion-button>
+        <ion-button id="submitButton" (click)="createPost()">Submit</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+  
   <app-explore-container name="Forum page"></app-explore-container>
 </ion-content>
