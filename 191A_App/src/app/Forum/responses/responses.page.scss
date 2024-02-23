@@ -1,6 +1,6 @@
 .commentUserBox {
-    color: white;
-    background-color: black;
+    // color: black;
+    border: 1px solid gray;
     width: 90%;
     margin: 20px;
     padding: 0px 10px;
@@ -8,8 +8,8 @@
 }
 
 .commentBox {
-    color: white;
-    background-color: black;
+    // color: black;
+    border: 1px solid gray;
     width: 90%;
     height: 200px;
     margin: 20px;
@@ -23,8 +23,29 @@
 }
 
 .cardButton {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 12px;
+    margin-left: 12px;
     margin-bottom: 20px;
     --border-radius: 30px;
+    --background: dodgerblue;
+}
+
+.deleteButton {
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-bottom: 20px;
+    --border-radius: 30px;
+    // royal blue
+    // --background: rgb(30, 30, 242);
+    --background: rgb(64, 64, 64);
+}
+
+.default-likeButton {
+    --background: DodgerBlue !important; /* Use !important to override Ionic's default styles */
+}
+  
+.clicked-likeButton {
+    // red
+    // --background: #E62F54 !important; /* Use !important to override Ionic's default styles */
+    --background: rgb(0, 143, 0);
 }

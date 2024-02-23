@@ -14,39 +14,8 @@
   </ion-button>
   <!-- search bar -->
   <ion-searchbar show-clear-button="never"></ion-searchbar>
-  
-    <ion-button id="newPostButton" size="large">Make new post</ion-button>
-  
-
-  <!--ion-card filler 1-->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Checkers</ion-card-title>
-      <ion-card-subtitle></ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      I invite Checkers enthusiasts to discuss with me!
-    </ion-card-content>
-
-    <ion-button (click)="changeColor()" class="likeButton" [class.clicked]="isClicked" fill="solid">Like <ion-icon  name="thumbs-up-outline"></ion-icon></ion-button>
-    <ion-button class="responseButton" href="tabs/Forum/responses" fill="solid">See responses</ion-button>
-  </ion-card>
-  
-   <!--ion-card filler 2-->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Arts and crafts</ion-card-title>
-      <ion-card-subtitle></ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      I invite arts and crafts enthusiasts to discuss with me!
-    </ion-card-content>
-
-    <ion-button class="likeButton" fill="solid">Like <ion-icon slot="end" name="thumbs-up-outline"></ion-icon></ion-button>
-    <ion-button class="responseButton" href="tabs/Forum/responses" fill="solid">See responses</ion-button>
-  </ion-card>
+  <!-- add post fab -->
+  <ion-button id="newPostButton" size="large">Make new post</ion-button>
 
   <!--dynamic ion-cards for posts-->
   <ion-card *ngFor="let post of posts">
@@ -55,17 +24,22 @@
       <ion-card-subtitle></ion-card-subtitle>
     </ion-card-header>
   
-    <ion-card-content>
-      {{ post.comment }}
+    <ion-card-content class="resizeable">
+      {{ post.content }}
     </ion-card-content>
   
-    <ion-button class="likeButton" fill="solid">Like <ion-icon slot="end" name="thumbs-up-outline"></ion-icon></ion-button>
-    <ion-button class="responseButton" href="tabs/Forum/responses" fill="solid">See responses</ion-button>
+    <ion-button [class.default-likeButton]="!post.likeButtonState" [class.clicked-likeButton]="post.likeButtonState" (click)="toggleButtonState(post)" class="likeButton" fill="solid">
+      Like <ion-icon slot="end" name="thumbs-up-outline"></ion-icon></ion-button>
+    <ion-button class="responseButton" [routerLink]="['/responses', post.id]" fill="solid">See responses</ion-button>
+    <ion-button class="deleteButton" (click)="removePostFromLocalStorage(post.id)" fill="solid">Delete</ion-button>
   </ion-card>
-  
-  <!-- add post fab -->
-  
-  <!-- <p>{{ message }}</p> -->
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="increaseFontSize()" color="secondary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- modal -->
   <ion-modal trigger="newPostButton" >
     <ng-template>
       <ion-header>
@@ -82,14 +56,22 @@
       <ion-content class="ion-padding">
         <ion-item>
           <ion-label position="stacked">Subject</ion-label>
-          <ion-input type="text" placeholder="Subject" [(ngModel)]="subject" ></ion-input>
+          <ion-input type="text" placeholder="What is the subject" [(ngModel)]="newSubject" ></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Text</ion-label>
-          <ion-textarea type="text" placeholder="What is on your mind" [(ngModel)]="comment"></ion-textarea>
+          <ion-label position="stacked">Content</ion-label>
+          <ion-textarea [autoGrow]="true" type="text" placeholder="What is on your mind" [(ngModel)]="newContent"></ion-textarea>
         </ion-item>
         <ion-button id="cancelButton" (click)="cancel()">Cancel</ion-button>
-        <ion-button id="submitButton" (click)="createPost()">Submit</ion-button>
+        <ion-button id="submitOpenToast" (click)="submitPost(newSubject, newContent)">Submit</ion-button>
+        <!-- toast -->
+        <ion-toast
+          [isOpen]="isToastOpen"
+          message="Your post has been submitted!"
+          [duration]="5000"
+          (didDismiss)="openToast()"
+        ></ion-toast>
+        <!-- <ion-toast trigger="submitOpenToast" message="Your post has been submitted!" [duration]="5000"></ion-toast> -->
       </ion-content>
     </ng-template>
   </ion-modal>
