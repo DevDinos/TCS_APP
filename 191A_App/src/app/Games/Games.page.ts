@@ -12,4 +12,8 @@ export class GamesPage {
   constructor(private route: Router){
   }
 
+  navigateBack(){
+    this.route.navigate(["/tabs/HomePage"]);
+  }
+
 }

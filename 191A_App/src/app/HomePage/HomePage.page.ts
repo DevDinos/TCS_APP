@@ -13,6 +13,18 @@ export class HomePagePage {
   constructor(private route: Router, private modalCtrl: ModalController){
     console.log('HomePagePage constructor');
   }
+
+  navigateTo(destination:any){
+    let validDestinations: Array<string> = ["Welcome", "Helpline", "Resources", "Calendar", "Games", "Forum", "Account", "Settings"];
+
+    if (validDestinations.includes(destination)){
+      let tempDestination: string = "/tabs/" + destination;
+      this.route.navigate([tempDestination]);
+    }
+  }
+
+
+
   async ionViewDidEnter() {
     console.log('Starting to create modal');
     const modal = await this.modalCtrl.create({

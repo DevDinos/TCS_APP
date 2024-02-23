@@ -25,6 +25,10 @@ export class CalendarPage {
                                           "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA"]);
   }
 
+  navigateBack(){
+    this.route.navigate(["/tabs/HomePage"]);
+  }
+
   onDateSelectionChange(event: any) {
     //console.log('Selected Date:', this.selectedDate);
     console.log("Selected Date:", new Date(Date.parse(this.selectedDate)))

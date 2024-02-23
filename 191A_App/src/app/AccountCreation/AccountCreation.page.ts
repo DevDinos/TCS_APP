@@ -12,4 +12,12 @@ export class AccountCreationPage {
   constructor(private route: Router){
   }
 
+  navigateBack(){
+    this.route.navigate(["/tabs/Welcome"]);
+  }
+
+  navigateSubmit(){
+    this.route.navigate(["/tabs/InitialSetup"]);
+  }
+
 }

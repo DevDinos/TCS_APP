@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, PopoverController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/post';
 import { Response } from 'src/app/response';
 import { PostModalComponent } from 'src/app/post-modal/post-modal.component';
@@ -19,7 +20,7 @@ export class ResponsesPage implements OnInit {
   responseCount: number = 0;
   newUsername: string ='';
   newContent: string = '';
-  constructor(private route: ActivatedRoute, private alertController: AlertController) { 
+  constructor(private route: ActivatedRoute, private alertController: AlertController, private router:Router) { 
   }
 
   // initial page set-up
@@ -33,6 +34,10 @@ export class ResponsesPage implements OnInit {
         // Handle the case where postIdParam is null
       }
     });
+  }
+
+  navigateBack(){
+    this.router.navigate(["/tabs/Forum"]);
   }
 
   // loads post and responses already from the post

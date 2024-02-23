@@ -40,6 +40,10 @@ export class ForumPage {
     this.loadPosts();
   }
 
+  navigateBack(){
+    this.router.navigate(["/tabs/HomePage"]);
+  }
+
 increaseFontSize() {
   const elements = document.querySelectorAll('.resizeable');
   (elements: any) => {

@@ -7,42 +7,43 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button href="/tabs/Welcome">Back
+  <ion-button (click)="navigateTo('Welcome')">Back
     <ion-icon name="arrow-back-outline"></ion-icon>
   </ion-button>
 
-  <ion-button href="/tabs/Helpline" color="danger">Helpline
+  <ion-button (click)="navigateTo('Helpline')" color="danger">Helpline
     <ion-icon name="call-outline"></ion-icon>
   </ion-button>
 
   <h1>Home</h1>
   <h3>Welcome to Sunrise Connections!</h3>
+
   <div class="container">
-    <ion-button href="/tabs/Resources">Resources
+    <ion-button (click)="navigateTo('Resources')">Resources
       <ion-icon name="book-outline"></ion-icon>
     </ion-button>
 
-    <ion-button href="/tabs/Calendar">Calendar
+    <ion-button (click)="navigateTo('Calendar')">Calendar
       <ion-icon name="calendar-outline"></ion-icon>
     </ion-button>
 
-    <ion-button href="/tabs/Account">Account
-      <ion-icon name="person-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button href="/tabs/Forum">Forum
-      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button href="/tabs/Games">Games
+    <ion-button (click)="navigateTo('Games')">Games
       <ion-icon name="game-controller-outline"></ion-icon>
     </ion-button>
 
-    <ion-button href="/tabs/Settings">Settings
+    <ion-button (click)="navigateTo('Forum')">Forum
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="navigateTo('Account')">Account
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="navigateTo('Settings')">Settings
       <ion-icon name="settings-outline"></ion-icon>
     </ion-button>
 
-    <ion-button (click)="ionViewDidEnter()">Check-In
+    <ion-button class="container_item" (click)="ionViewDidEnter()">Check-In
       <ion-icon name="happy-outline"></ion-icon>
     </ion-button>
   </div>

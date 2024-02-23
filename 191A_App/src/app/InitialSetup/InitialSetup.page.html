@@ -51,5 +51,5 @@
   <ion-button *ngIf="(pageIndex != 0) && (pageIndex != 3)" (click)="forward()">Submit</ion-button>
   <ion-button *ngIf="pageIndex != 3"(click)="skipSetup()">Skip</ion-button>
 
-  <ion-button *ngIf="pageIndex == 3" href="/tabs/HomePage">Finish</ion-button>
+  <ion-button *ngIf="pageIndex == 3" (click)="navigateFinish()">Finish</ion-button>
 </ion-content>

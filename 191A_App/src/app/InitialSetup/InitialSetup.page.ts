@@ -14,6 +14,10 @@ export class InitialSetupPage{
 
   }
 
+  navigateFinish(){
+    this.route.navigate(["/tabs/HomePage"]);
+  }
+
   forward(){
     if (this.pageIndex < 3){
       this.pageIndex++;

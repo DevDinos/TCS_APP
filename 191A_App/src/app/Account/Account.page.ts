@@ -12,4 +12,8 @@ export class AccountPage {
   constructor(private route: Router){
   }
 
+  navigateBack(){
+    this.route.navigate(["/tabs/HomePage"]);
+  }
+
 }
