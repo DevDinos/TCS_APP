@@ -12,4 +12,7 @@ export class WelcomePage {
   constructor(private route: Router){
   }
 
+  navigate(){
+    this.route.navigate(['/tabs/Login'])
+  }
 }
