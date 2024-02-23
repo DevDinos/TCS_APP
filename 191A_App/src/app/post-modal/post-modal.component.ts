@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-modal.component.scss'],
 })
 export class PostModalComponent  implements OnInit {
-
+  subject: string ='';
+  content: string ='';
   constructor() { }
 
   ngOnInit() {}

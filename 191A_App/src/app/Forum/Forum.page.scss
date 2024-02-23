@@ -1,37 +1,76 @@
+ion-toolbar {
+    --background-color: #ff6b65;
+    --height: 60px;
+}
+
+ion-title {
+    font-size: 35px;
+}
+
 #cancelButton {
     position: absolute;
     bottom: 10px;
     left: 20px;
 }
 
-#submitButton {
+#submitOpenToast {
     position: absolute;
     bottom: 10px;
     right: 20px;
 }
 
 .likeButton {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 12px;
+    margin-left: 12px;
     margin-bottom: 20px;
     --border-radius: 30px;
+    --background: #febd79;
     // --background-activated: #fa8072;
 }
  //change likeButton when clicked using isClicked boolean
 .likeButton.clicked {
-    --background: #E62F54;
+    --background: #ff6b65;
 }
 
 .responseButton {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 12px;
+    margin-left: 12px;
     margin-bottom: 20px;
     --border-radius: 30px;
+    --background: dodgerblue;
+}
+
+.deleteButton {
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-bottom: 20px;
+    --border-radius: 30px;
+    // royal blue
+    // --background: rgb(30, 30, 242);
+    --background: rgb(64, 64, 64);
 }
 
 #newPostButton {
     margin-left: 30%;
     margin-top: 10px;
     --border-radius: 30px;
-    // --box-shadow: 0px 5px 10px 0px white;
+}
+
+ion-textarea {
+    // try to make buttons not disappear when post gets too big
+    --max-length: 100px;
+}
+
+.default-likeButton {
+    --background: dodgerblue !important; /* Use !important to override Ionic's default styles */
+}
+  
+.clicked-likeButton {
+    // red
+    // --background: #E62F54 !important; /* Use !important to override Ionic's default styles */
+    --background: #ff6b65;
+}
+
+ion-toast {
+    --text-align: center;
 }
