@@ -12,4 +12,8 @@ export class LoginPage {
   constructor(private route: Router){
   }
 
+  navigateBack(){
+    this.route.navigate(['/tabs/Welcome'])
+  }
+
 }

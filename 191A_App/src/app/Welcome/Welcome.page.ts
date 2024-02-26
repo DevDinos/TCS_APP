@@ -12,7 +12,14 @@ export class WelcomePage {
   constructor(private route: Router){
   }
 
-  navigate(){
+  /*navigate(){
     this.route.navigate(['/tabs/Login'])
+  }*/
+
+  navigateLogIn(){
+    this.route.navigate(['/tabs/Login'])
+  }
+  navigateAccountCreation(){
+    this.route.navigate(['/tabs/AccountCreation'])
   }
 }
