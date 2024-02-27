@@ -20,6 +20,8 @@ export class CalendarPage {
 
   myDate: String = new Date().toISOString();
 
+  selectedTab: String = "Your Events";
+
   constructor(private route: Router) { 
     this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House; Sunrise St, Sunset Beach, CA, USA", 
                                           "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA"]);
@@ -37,6 +39,7 @@ export class CalendarPage {
     if (this.allEvents.has(this.formattedDate)){
       //this.selectedEvents = this.allEvents.get(this.formattedDate)!;
       //console.log("Found!");
+      this.selectedEvents = [];
       let onEvent = this.allEvents.get(this.formattedDate)
       for (let i = 0; i < onEvent!.length; i++){
         let temp = onEvent![i].split(";");
@@ -46,7 +49,10 @@ export class CalendarPage {
     }
   }
 
-
+  tabSelection(tabName: String){
+    //console.log(tabName);
+    this.selectedTab = tabName;
+  }
 
 }
 

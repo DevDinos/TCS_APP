@@ -1,0 +1,68 @@
+.calendarTabs{
+    display: grid;
+    position: absolute;
+    margin: 5% 0% 0% 39.3%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100% auto;
+    column-gap: 10%;
+    height: 5%;
+    width: 20%
+
+}
+
+.tab{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+
+.underline{
+    position: absolute;
+    width: 30%;
+    height: 10%;
+    margin: 2% 0% 0% 10%;
+    background-color: black;
+}
+
+.calendar{
+    position: absolute;
+    margin: 10% 0% 0% 38%;
+}
+
+
+  
+/*ion-datetime::part(calendar-day today) {
+    color: #8462d1;
+    background-color: #FF6B65;
+}*/
+
+
+ion-datetime::part(calendar-day):focus {
+    background-color: #FF6B65;
+}
+
+
+.events{
+    position: absolute;
+    margin: 40% 0% 0% 38%;
+    width: 24%;
+
+}
+
+.eventBox{
+    /*background-color: black;*/
+    height: 10em;
+    width: 80%;
+    border: 0.3em solid rgb(255, 107, 101);
+    border-radius: 5%;
+    margin: 0% 0% 10% 10%;
+    padding: 2% 2% 0% 2%;
+    box-shadow: 10px 10px rgb(175, 198, 206);
+    /*font-size: 0.5em;*/
+}
+
+p{
+    font-size: 0.8em;
+}
+
+
