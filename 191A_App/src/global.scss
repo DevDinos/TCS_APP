@@ -29,10 +29,18 @@ ion-modal {
     --height: 75%;
     border-radius: 16px;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
+}
   
-  ion-modal::part(backdrop) {
+ion-modal::part(backdrop) {
     background: rgb(8, 8, 37);
     opacity: 1;
-  }
+}
   
+html {
+    /* 
+     * For more information on dynamic font scaling, visit the documentation:
+     * https://ionicframework.com/docs/layout/dynamic-font-scaling
+     */
+    --ion-dynamic-font: var(--ion-default-dynamic-font);
+    --ion-font-family: 'Myanmar Khyay';
+}
