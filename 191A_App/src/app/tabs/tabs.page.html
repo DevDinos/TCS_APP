@@ -3,7 +3,7 @@
 
   <!-- De-Comment the below code to add navbar! -->
   
-  <ion-tab-bar slot="bottom">
+  <ion-tab-bar *ngIf="currentPage != 'None'" slot="bottom">
 
     <ion-tab-button tab="HomePage" (click)="navigateTo('HomePage')">
       <ion-icon aria-hidden="true" name="square" *ngIf="currentPage == 'HomePage'"></ion-icon>

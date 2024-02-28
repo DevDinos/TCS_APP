@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CheckInPage } from '../CheckIn/CheckIn.page';
+import { TabsPage } from '../tabs/tabs.page';
 @Component({
   selector: 'app-HomePage',
   templateUrl: 'HomePage.page.html',
@@ -10,7 +11,7 @@ import { CheckInPage } from '../CheckIn/CheckIn.page';
 export class HomePagePage {
   message = ""
 
-  constructor(private route: Router, private modalCtrl: ModalController){
+  constructor(private route: Router, private modalCtrl: ModalController, private tabsPage: TabsPage){
     console.log('HomePagePage constructor');
   }
 
@@ -18,6 +19,9 @@ export class HomePagePage {
     let validDestinations: Array<string> = ["Welcome", "Helpline", "Resources", "Calendar", "Games", "Forum", "Account", "Settings"];
 
     if (validDestinations.includes(destination)){
+      if (destination == "Welcome"){
+        this.tabsPage.hideTab();
+      }
       let tempDestination: string = "/tabs/" + destination;
       this.route.navigate([tempDestination]);
     }

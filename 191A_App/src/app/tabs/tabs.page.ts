@@ -15,6 +15,14 @@ export class TabsPage {
 
   currentPage: String = "None";
 
+  revealTab(){
+    this.currentPage = "HomePage";
+  }
+
+  hideTab(){
+      this.currentPage = "None";
+  }
+
   ngOnInit(){
     console.log(this.route.url);
   }

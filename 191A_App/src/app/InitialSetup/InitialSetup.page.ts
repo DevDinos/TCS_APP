@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TabsPage } from '../tabs/tabs.page';
 //import { NavController } from 'ionic-angular';
 
 @Component({
@@ -10,12 +11,13 @@ import { Router } from '@angular/router';
 export class InitialSetupPage{
   pageIndex: number = 0;
 
-  constructor(private route: Router){
+  constructor(private route: Router, private tabsPage: TabsPage){
 
   }
 
   navigateFinish(){
     this.route.navigate(["/tabs/HomePage"]);
+    this.tabsPage.revealTab();
   }
 
   forward(){
