@@ -37,7 +37,6 @@ ion-title {
     margin-left: 12px;
     margin-bottom: 20px;
     --border-radius: 30px;
-    --background: dodgerblue;
 }
 
 .deleteButton {
@@ -51,18 +50,18 @@ ion-title {
 }
 
 #newPostButton {
-    margin-left: 30%;
+    margin: 0% 10%;
     margin-top: 10px;
     --border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
 
 ion-textarea {
     // try to make buttons not disappear when post gets too big
     --max-length: 100px;
-}
-
-.default-likeButton {
-    --background: dodgerblue !important; /* Use !important to override Ionic's default styles */
 }
   
 .clicked-likeButton {
