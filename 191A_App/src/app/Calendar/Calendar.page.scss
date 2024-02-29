@@ -1,12 +1,17 @@
-.calendarTabs{
+.calendarTabs {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.calendarTabsGrid{
     display: grid;
     position: absolute;
-    margin: 5% 0% 0% 39.3%;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100% auto;
     column-gap: 10%;
-    height: 5%;
-    width: 20%
 
 }
 
@@ -21,12 +26,15 @@
     width: 30%;
     height: 10%;
     margin: 2% 0% 0% 10%;
-    background-color: black;
+    background-color: var(--ion-color-dark);
 }
 
 .calendar{
-    position: absolute;
-    margin: 10% 0% 0% 38%;
+    padding-top: 20px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -38,7 +46,7 @@
 
 
 ion-datetime::part(calendar-day):focus {
-    background-color: #FF6B65;
+    background-color: #ff6a6546;
 }
 
 

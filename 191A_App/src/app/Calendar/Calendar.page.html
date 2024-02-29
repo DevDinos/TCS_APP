@@ -12,25 +12,25 @@
   </ion-button>
 
   <br>
+  <div class = "calendarTabs">
+    <div class="calendarTabsGrid">
+      <button class="tab" (click)="tabSelection('Your Events')">Your Events
+        <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
+      </button>
+    
 
-  <div class="calendarTabs">
-    <button class="tab" (click)="tabSelection('Your Events')">Your Events
-      <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
-    </button>
-
-
-    <button class="tab" (click)="tabSelection('Events')">Events
-      <div class="underline" *ngIf="selectedTab == 'Events'"></div>
-    </button>
-
-
+      <button class="tab" (click)="tabSelection('Events')">Events
+        <div class="underline" *ngIf="selectedTab == 'Events'"></div>
+      </button>
+    </div>
   </div>
-
   <!--Starting the Calendar Here:-->
   <!--The ngModel is equal to a variable inside the page.ts's class, and ionchange is pointing to a function within the same \
     class that will display on the console a message with the date selected. 
     This might be helpful since it shows the way the string looks.-->
-  <ion-datetime class="calendar" [(ngModel)]="selectedDate" [(ngModel)]="myDate" (ionChange)="onDateSelectionChange($event)"></ion-datetime>
+  <div class="calendar">
+    <ion-datetime [(ngModel)]="selectedDate" [(ngModel)]="myDate" (ionChange)="onDateSelectionChange($event)"></ion-datetime>
+  </div>
   <ion-list class="events">
     <!--<ion-card *ngFor="let event of selectedEvents">
       <ion-card-header>
