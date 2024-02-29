@@ -1,12 +1,34 @@
-<ion-content *ngIf="showPart2">
-  <ion-content class="checkin-size">
-    <img class="first-content" [src]="imageSelected" alt="Random Image">
-    <h1 *ngIf="selectedMood === 'sad'">We're sorry to hear that, we hope you feel better!</h1>
-    <h1 *ngIf="selectedMood === 'neutral'">Well, we hope you have a great time here!</h1>
-    <h1 *ngIf="selectedMood === 'happy'">Glad to hear that! Hope your day stays bright!</h1>
-    <h1 *ngIf="selectedMood !== 'sad' && selectedMood !== 'neutral' && selectedMood !== 'happy'">Enjoy your time here!</h1>
-
-    <ion-button class="complete-button" (click)="complete()">COMPLETE</ion-button>
-    <ion-button class="skip-button transparent" (click)="complete()">SKIP</ion-button>
-  </ion-content>
+<ion-content class='checkin-size' *ngIf="showPart2">
+  <ion-grid>
+    <ion-row class="first-content">
+      <ion-col>
+        <!-- Top Content -->
+        <img [src]="imageSelected" alt="Random Image">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Middle Content -->
+        <ion-row class="middle">
+          <ion-col>
+            <h3 *ngIf="selectedMood === 'sad'">We're sorry to hear that, we hope you feel better!</h3>
+            <h3 *ngIf="selectedMood === 'neutral'">Well, we hope you have a great time here!</h3>
+            <h3 *ngIf="selectedMood === 'happy'">Glad to hear that! Hope your day stays bright!</h3>
+            <h3 *ngIf="selectedMood === ''">Enjoy your time here!</h3>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Bottom Content -->
+        <ion-button class="complete-button" (click)="complete()">COMPLETE</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="skip-button" (click)="complete()">SKIP</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
