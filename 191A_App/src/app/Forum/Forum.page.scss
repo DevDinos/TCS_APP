@@ -72,3 +72,9 @@ ion-textarea {
 ion-toast {
     --text-align: center;
 }
+
+ion-card,
+ion-card-header,
+ion-card-content {
+  font-size: calc(var(--base-font-size) * var(--zoom-factor)); // Calculate font size based on zoom factor
+}

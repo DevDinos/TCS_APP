@@ -23,6 +23,7 @@ export class ForumPage {
 
   isToastOpen = false;
 
+  zoomFactor = 1;
   constructor(private router: Router, 
     private modalController: ModalController,
     private renderer: Renderer2,
@@ -44,14 +45,26 @@ export class ForumPage {
     this.router.navigate(["/tabs/HomePage"]);
   }
 
-increaseFontSize() {
-  const elements = document.querySelectorAll('.resizeable');
-  (elements: any) => {
-    elements.forEach((element: HTMLElement) => {
-    let currentFontSize = parseFloat(window.getComputedStyle(elements).fontSize);
-    this.renderer.setStyle(elements, 'font-size', (currentFontSize + 10) + 'px');
-  });
+// increaseFontSize() {
+//   const elements = document.querySelectorAll('.resizeable');
+//   (elements: any) => {
+//     elements.forEach((element: HTMLElement) => {
+//     let currentFontSize = parseFloat(window.getComputedStyle(elements).fontSize);
+//     this.renderer.setStyle(elements, 'font-size', (currentFontSize + 10) + 'px');
+//   });
+// }
+// }
+
+// Method to increase font size
+zoomIn() {
+  this.zoomFactor += 0.1; // Increase zoom factor by 0.1
+  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
 }
+
+// Method to decrease font size
+zoomOut() {
+  this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
+  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
 }
 
 // Load postCount from local storage method

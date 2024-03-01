@@ -10,12 +10,14 @@
   <!-- back button -->
   <ion-button (click)="navigateBack()">
     <ion-icon name="arrow-back-outline"></ion-icon>
-    Back
+    <ion-label style="--font-size: var(--base-font-size)">Back</ion-label>
   </ion-button>
   <!-- search bar -->
   <ion-searchbar show-clear-button="never"></ion-searchbar>
   <!-- add post fab -->
-  <ion-button id="newPostButton" size="large">Make new post</ion-button>
+  <ion-button id="newPostButton" size="large">
+    <ion-label>Make new post</ion-label>
+  </ion-button>
 
   <!--dynamic ion-cards for posts-->
   <ion-card *ngFor="let post of posts">
@@ -24,7 +26,7 @@
       <ion-card-subtitle></ion-card-subtitle>
     </ion-card-header>
   
-    <ion-card-content class="resizeable">
+    <ion-card-content style="--font-size: var(--base-font-size)">
       {{ post.content }}
     </ion-card-content>
   
@@ -35,8 +37,11 @@
   </ion-card>
 
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button (click)="increaseFontSize()" color="secondary">
+    <ion-fab-button (click)="zoomIn()" color="secondary">
       <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="zoomOut()" color="secondary">
+      <ion-icon name="remove-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <!-- modal -->
