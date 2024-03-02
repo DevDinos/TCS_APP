@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationService } from '../Services/navigation.service';
 //import { NavController } from 'ionic-angular';
 
 @Component({
@@ -9,15 +9,11 @@ import { Router } from '@angular/router';
 })
 export class AccountCreationPage {
 
-  constructor(private route: Router){
+  constructor(private ns: NavigationService){
   }
 
-  navigateBack(){
-    this.route.navigate(["/tabs/Welcome"]);
-  }
-
-  navigateSubmit(){
-    this.route.navigate(["/tabs/InitialSetup"]);
+  navigateTo(destination: string){
+    this.ns.navigateTo(destination);
   }
 
 }

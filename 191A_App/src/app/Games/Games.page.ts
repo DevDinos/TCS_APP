@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationService } from '../Services/navigation.service';
 //import { NavController } from 'ionic-angular';
 
 @Component({
@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class GamesPage {
 
-  constructor(private route: Router){
+  constructor(private ns: NavigationService){
   }
 
-  navigateBack(){
-    this.route.navigate(["/tabs/HomePage"]);
+  navigateTo(destination: string){
+    this.ns.navigateTo(destination);
   }
 
 }

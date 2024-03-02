@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { TabsPage } from '../tabs/tabs.page';
+import { NavigationService } from '../Services/navigation.service';
 //import { NavController } from 'ionic-angular';
 
 @Component({
@@ -10,18 +10,14 @@ import { TabsPage } from '../tabs/tabs.page';
 })
 export class LoginPage {
 
-  constructor(private route: Router, private tabsPage: TabsPage){
+  constructor(private ts: TabsPage, private ns: NavigationService){
   }
 
-  navigateTo(destination:any){
-    let validDestinations: Array<string> = ["Welcome", "Helpline", "HomePage", "Resources", "Calendar", "Games", "Forum", "Account", "Settings"];
+  navigateTo(destination: string){
+    this.ns.navigateTo(destination);
 
-    if (validDestinations.includes(destination)){
-      if (destination == "HomePage"){
-        this.tabsPage.revealTab();
-      }
-      let tempDestination: string = "/tabs/" + destination;
-      this.route.navigate([tempDestination]);
+    if (destination == "HomePage"){
+      this.ts.revealTab();
     }
   }
 

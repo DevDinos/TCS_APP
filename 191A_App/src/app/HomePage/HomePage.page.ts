@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CheckInPage } from '../CheckIn/CheckIn.page';
-import {ModalService} from '../services/modal.service';
+import { ModalService } from '../Services/modal.service';
+import { TabsPage } from '../tabs/tabs.page';
+import { NavigationService } from '../Services/navigation.service';
 
 @Component({
   selector: 'app-HomePage',
@@ -13,16 +14,16 @@ import {ModalService} from '../services/modal.service';
 export class HomePagePage {
   checkinButton: boolean = false;
 
-  constructor(private route: Router, private modalCtrl: ModalController, private modalService: ModalService){
+  constructor(private modalCtrl: ModalController, private modalService: ModalService, private tabsPage: TabsPage, private ns: NavigationService){
     console.log('HomePagePage constructor, flag: ', this.modalService.modalAlreadyShown);
   }
 
   navigateTo(destination:any){
-    let validDestinations: Array<string> = ["Welcome", "Helpline", "HomePage", "Resources", "Calendar", "Games", "Forum", "Account", "Settings", "AccountCreation", "Login"];
 
-    if (validDestinations.includes(destination)){
-      let tempDestination: string = "/tabs/" + destination;
-      this.route.navigate([tempDestination]);
+    this.ns.navigateTo(destination);
+
+    if (destination == "Welcome"){
+      this.tabsPage.hideTab();
     }
   }
 

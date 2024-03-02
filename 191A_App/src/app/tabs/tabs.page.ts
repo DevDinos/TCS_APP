@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute} from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
+import { NavigationService } from '../Services/navigation.service';
 
 //Source:
 // https://stackoverflow.com/questions/74651790/how-to-update-the-variable-value-in-the-component-in-angular
@@ -11,7 +12,7 @@ import { Router, ActivatedRoute} from '@angular/router';
 })
 export class TabsPage {
 
-  constructor(private route: Router, private aRoute: ActivatedRoute) {}
+  constructor(private aRoute: ActivatedRoute, private ns: NavigationService) {}
 
   currentPage: String = "None";
 
@@ -24,17 +25,17 @@ export class TabsPage {
   }
 
   ngOnInit(){
-    console.log(this.route.url);
+    console.log(this.ns.getUrl());
   }
 
   navigateTo(destination:any){
-    let validDestinations: Array<string> = ["HomePage", "Forum", "Resources", "Calendar"];
+    this.ns.navigateTo(destination);
 
-    if (validDestinations.includes(destination)){
-      let tempDestination: string = "/tabs/" + destination;
-      this.route.navigate([tempDestination]);
-      this.currentPage = destination;
-    }
+    this.currentPage = destination;
+  }
+
+  public setCurrentPage(currentPage: string){
+    this.currentPage = currentPage;
   }
   
 }

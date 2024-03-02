@@ -1,7 +1,7 @@
 import { Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
-import { Router } from '@angular/router';
 import { AlertController, IonButton, PopoverController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
+import { NavigationService } from '../Services/navigation.service';
 // post interface, routing comments
 import { Post } from '../post';
 
@@ -24,10 +24,10 @@ export class ForumPage {
   isToastOpen = false;
 
   zoomFactor = 1;
-  constructor(private router: Router, 
-    private modalController: ModalController,
+  constructor(private modalController: ModalController,
     private renderer: Renderer2,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private ns: NavigationService
     ){
     }
   
@@ -41,8 +41,8 @@ export class ForumPage {
     this.loadPosts();
   }
 
-  navigateBack(){
-    this.router.navigate(["/tabs/HomePage"]);
+  navigateTo(destination: string){
+    this.ns.navigateTo(destination);
   }
 
 // increaseFontSize() {

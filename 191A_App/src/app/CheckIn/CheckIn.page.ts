@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CheckIn2Page } from '../check-in2/check-in2.page';
 //import { NavController } from 'ionic-angular';
@@ -16,7 +15,7 @@ export class CheckInPage {
   moodTrue: boolean = false;
   skipTrue: boolean = false;
 
-  constructor(private route: Router, private modalCtrl: ModalController){
+  constructor(private modalCtrl: ModalController){
   }
 
   ngOnInit(){

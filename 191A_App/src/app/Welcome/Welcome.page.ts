@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NavigationService } from '../Services/navigation.service';
 //import { NavController } from 'ionic-angular';
 
 @Component({
@@ -13,16 +13,11 @@ export class WelcomePage {
 
   public baseURL = "sunriseconnectionsserver.mysql.database.azure.com";
 
-  constructor(private route: Router, private httpClient: HttpClient){
+  constructor(private httpClient: HttpClient, private ns: NavigationService){
   }
 
-  navigateTo(destination:any){
-    let validDestinations: Array<string> = ["Welcome", "Helpline", "HomePage", "Resources", "Calendar", "Games", "Forum", "Account", "Settings", "AccountCreation", "Login"];
-
-    if (validDestinations.includes(destination)){
-      let tempDestination: string = "/tabs/" + destination;
-      this.route.navigate([tempDestination]);
-    }
+  navigateTo(destination: string){
+    this.ns.navigateTo(destination);
   }
 
 

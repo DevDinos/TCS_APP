@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   
-  <ion-button (click)="navigateBack()">Back
+  <ion-button (click)="navigateTo('Welcome')">Back
     <ion-icon name="arrow-back-outline"></ion-icon>
   </ion-button>
   
@@ -38,6 +38,6 @@
 
   </ion-list>
 
-  <ion-button (click)="navigateSubmit()">Submit</ion-button>
+  <ion-button (click)="navigateTo('InitialSetup')">Submit</ion-button>
 
 </ion-content>
