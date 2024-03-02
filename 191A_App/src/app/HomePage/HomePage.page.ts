@@ -2,47 +2,59 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CheckInPage } from '../CheckIn/CheckIn.page';
-import { TabsPage } from '../tabs/tabs.page';
+import {ModalService} from '../services/modal.service';
+
 @Component({
   selector: 'app-HomePage',
   templateUrl: 'HomePage.page.html',
   styleUrls: ['HomePage.page.scss']
 })
-export class HomePagePage {
-  message = ""
 
-  constructor(private route: Router, private modalCtrl: ModalController, private tabsPage: TabsPage){
-    console.log('HomePagePage constructor');
+export class HomePagePage {
+  checkinButton: boolean = false;
+
+  constructor(private route: Router, private modalCtrl: ModalController, private modalService: ModalService){
+    console.log('HomePagePage constructor, flag: ', this.modalService.modalAlreadyShown);
   }
 
   navigateTo(destination:any){
-    let validDestinations: Array<string> = ["Welcome", "Helpline", "Resources", "Calendar", "Games", "Forum", "Account", "Settings"];
+    let validDestinations: Array<string> = ["Welcome", "Helpline", "HomePage", "Resources", "Calendar", "Games", "Forum", "Account", "Settings", "AccountCreation", "Login"];
 
     if (validDestinations.includes(destination)){
-      if (destination == "Welcome"){
-        this.tabsPage.hideTab();
-      }
       let tempDestination: string = "/tabs/" + destination;
       this.route.navigate([tempDestination]);
     }
   }
 
-
-
   async ionViewDidEnter() {
-    console.log('Starting to create modal');
-    const modal = await this.modalCtrl.create({
-      component: CheckInPage,   
-      cssClass: 'checkin-size',
-    });
-    modal.present();
-    console.log('Modal Created: ', modal);
-    const { data, role } = await modal.onWillDismiss();
-
-    if (role === 'confirm') {
-      this.message = `Hello, ${data}!`;
-    } else{
-      this.message = '';
+    console.log('Starting to create modal, checkin button: ', this.checkinButton);
+    if(this.checkinButton){
+      console.log('checkin click')
+      const modal = await this.modalCtrl.create({
+        component: CheckInPage,   
+        cssClass: 'checkin-size',
+      });
+      modal.present();
+      console.log('Modal Created: ', modal);
+      const { data, role } = await modal.onWillDismiss();
+  
+    } else if(!this.modalService.modalAlreadyShown){
+      console.log('popup')
+      const modal = await this.modalCtrl.create({
+        component: CheckInPage,   
+        cssClass: 'checkin-size',
+      });
+      modal.present();
+      console.log('Modal Created: ', modal);
+      const { data, role } = await modal.onWillDismiss();
+      
+      this.modalService.modalAlreadyShown = true;
     }
+  }
+
+  checkinClick(){
+    console.log(this.modalService.modalAlreadyShown)
+    this.checkinButton = true;
+    this.ionViewDidEnter();
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavParams} from '@ionic/angular';
-
 @Component({
   selector: 'app-check-in2',
   templateUrl: './check-in2.page.html',
