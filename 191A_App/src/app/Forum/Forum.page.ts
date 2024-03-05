@@ -1,6 +1,7 @@
 import { Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 import { AlertController, IonButton, PopoverController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
+import { TabsPage } from '../tabs/tabs.page';
 import { NavigationService } from '../Services/navigation.service';
 // post interface, routing comments
 import { Post } from '../post';
@@ -27,12 +28,16 @@ export class ForumPage {
   constructor(private modalController: ModalController,
     private renderer: Renderer2,
     private alertController: AlertController,
-    private ns: NavigationService
+    private ns: NavigationService,
+    private tabsPage: TabsPage
     ){
     }
   
     // initial page set-up
   ngOnInit() {
+
+    this.tabsPage.revealTab();
+
     if (!this.postCount) {
       // Initialize postCount if it hasn't been already
       this.loadPostCount();
