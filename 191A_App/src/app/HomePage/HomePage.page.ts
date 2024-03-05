@@ -28,7 +28,7 @@ export class HomePagePage {
   }
 
   async ionViewDidEnter() {
-    console.log('Starting to create modal, checkin button: ', this.checkinButton);
+    console.log('Starting to create modal, checkin button: ', this.checkinButton, this.modalService.checkModal());
     if(this.checkinButton){
       console.log('checkin click')
       const modal = await this.modalCtrl.create({
@@ -38,8 +38,9 @@ export class HomePagePage {
       modal.present();
       console.log('Modal Created: ', modal);
       const { data, role } = await modal.onWillDismiss();
+      this.checkinButton = false;
   
-    } else if(!this.modalService.modalAlreadyShown){
+    } else if(this.modalService.checkModal() === false){
       console.log('popup')
       const modal = await this.modalCtrl.create({
         component: CheckInPage,   
@@ -49,7 +50,7 @@ export class HomePagePage {
       console.log('Modal Created: ', modal);
       const { data, role } = await modal.onWillDismiss();
       
-      this.modalService.modalAlreadyShown = true;
+      this.modalService.modalShown();
     }
   }
 
