@@ -11,11 +11,16 @@ import { NavigationService } from '../Services/navigation.service';
   styleUrls: ['HomePage.page.scss']
 })
 
+
 export class HomePagePage {
   checkinButton: boolean = false;
 
   constructor(private modalCtrl: ModalController, private modalService: ModalService, private tabsPage: TabsPage, private ns: NavigationService){
     console.log('HomePagePage constructor, flag: ', this.modalService.modalAlreadyShown);
+  }
+
+  ngOnInit(){
+    this.tabsPage.revealTab();
   }
 
   navigateTo(destination:any){

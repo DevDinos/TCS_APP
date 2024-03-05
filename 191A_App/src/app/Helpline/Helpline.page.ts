@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationService } from '../Services/navigation.service';
+import { TabsPage } from '../tabs/tabs.page';
 //import { NavController } from 'ionic-angular';
 
 @Component({
@@ -9,7 +10,11 @@ import { NavigationService } from '../Services/navigation.service';
 })
 export class HelplinePage {
 
-  constructor(private ns: NavigationService){
+  constructor(private ns: NavigationService, private tabsPage: TabsPage){
+  }
+
+  ngOnInit(){
+    this.tabsPage.revealTab();
   }
 
   navigateTo(destination: string){

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TabsPage } from '../tabs/tabs.page';
 import { NavigationService } from '../Services/navigation.service';
 //import { NavController } from 'ionic-angular';
 //import { CalendarComponent, Step } from 'ionic7-calendar'; //Added for the Calendar
@@ -22,13 +23,17 @@ export class CalendarPage {
 
   selectedTab: String = "Your Events";
 
-  constructor(private ns: NavigationService) { 
+  constructor(private ns: NavigationService, private tabsPage: TabsPage) { 
     this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House; Sunrise St, Sunset Beach, CA, USA", 
                                           "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA"]);
     this.allEvents.set("Sun Jan 14 2024", ["1:00pm;Polo at Sunnyside Park.; Sunrise St, Sunset Beach, CA, USA", 
                                           "4:00pm;Hike by the Beach.; Coral St, Sunset Beach, CA, USA"]);
   }
 
+  ngOnInit(){
+    this.tabsPage.revealTab();
+  }
+  
   navigateTo(destination: string){
     this.ns.navigateTo(destination);
   }
