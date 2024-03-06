@@ -9,8 +9,8 @@
 
 .icon-size{
     fill: white;
-    stroke: black;
-    stroke-width: 4px;
+    stroke: var(--ion-color-dark);
+    stroke-width: 10px;
     font-size: 80px;
 }
 
@@ -65,5 +65,5 @@ h3{
 }
 
 .mood-selected{
-    fill:#FF6B65;
+    fill: var(--ion-color-like);
 }
