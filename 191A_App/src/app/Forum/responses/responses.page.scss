@@ -26,7 +26,7 @@
     color: black;
     margin-bottom: 20px;
     bottom: 10px;
-    margin-left: 285px;
+    margin-left: 275px;
     margin-top: 20px;
 }
 
@@ -36,7 +36,7 @@
     --border-width: 2px;
     --border-color: #fd800b;
     color: black;
-    margin-left: 33px;
+    margin-left: 30px;
     margin-bottom: 20px;
     --background-activated: #e49f55;
 }
@@ -68,4 +68,12 @@
 .replyButton {
     margin-left: 315px;
     --background-activated: #e49f55;
+}
+
+#postTitle {
+    font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important;
+}
+
+#postContent {
+    font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
 }

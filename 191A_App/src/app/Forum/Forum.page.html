@@ -8,9 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <!-- back button -->
-  <ion-button (click)="navigateTo('HomePage')">
+  <ion-button id="backButton" (click)="navigateTo('HomePage')">
     <ion-icon name="arrow-back-outline"></ion-icon>
-    <ion-label style="--font-size: var(--base-font-size)">Back</ion-label>
+    <ion-label>Back</ion-label>
   </ion-button>
   <!-- search bar -->
   <ion-searchbar show-clear-button="never"></ion-searchbar>
@@ -42,9 +42,6 @@
     </ion-fab-button>
     <ion-fab-button (click)="zoomOut()" class="zoomButton">
       <ion-icon name="remove-outline" class="zoomIcon"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-button (click)="zoomOut()" color="secondary">
-      <ion-icon name="remove-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <!-- modal -->

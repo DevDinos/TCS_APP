@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false">
   <ion-toolbar>
     <ion-title>Responses</ion-title>
   </ion-toolbar>
@@ -10,15 +10,12 @@
     Back
   </ion-button>
   <ion-header collapse="condense">
-    <!-- <ion-toolbar>
-      <ion-title size="large">Responses</ion-title>
-    </ion-toolbar> -->
       <!-- post -->
     <ion-card *ngIf="post">
-      <ion-card-header>
+      <ion-card-header id="postTitle">
         {{ post.subject }}
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content id="postContent">
         {{ post.content }}
       </ion-card-content>
     </ion-card>

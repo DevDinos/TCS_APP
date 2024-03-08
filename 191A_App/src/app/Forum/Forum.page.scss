@@ -1,6 +1,6 @@
 ion-toolbar {
-    height: 55px !important;
-    --padding-top: 10px;
+    height: 60px !important;
+    --padding-top: 20px;
     background-color: #ff6b65;
 }
 
@@ -28,7 +28,6 @@ div {
     margin-right: 12px;
     margin-left: 12px;
     margin-bottom: 20px;
-    --border-radius: 30px;
     --background: #febd79;
     // --background-activated: #fa8072;
 }
@@ -41,7 +40,6 @@ div {
     margin-right: 12px;
     margin-left: 12px;
     margin-bottom: 20px;
-    --border-radius: 30px;
 }
 
 .deleteButton {
@@ -57,7 +55,7 @@ div {
     --border-width: 2px;
     --border-color: #fd800b;
     color: black;
-    margin-left: 23px;
+    margin-left: 12px;
     margin-bottom: 20px;
     --background-activated: #e49f55;
 }
