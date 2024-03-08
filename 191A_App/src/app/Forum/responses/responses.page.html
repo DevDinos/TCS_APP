@@ -26,7 +26,7 @@
   <!-- comment user
   <ion-input [(ngModel)]="newUsername" class="commentUserBox" fill="solid" width="50"  placeholder="Enter your username"></ion-input> -->
   <!--comment textbox-->
-  <ion-textarea [(ngModel)]="newContent" class="commentBox" fill="solid" width="50"  placeholder="What are your thoughts?"></ion-textarea>
+  <ion-textarea [(ngModel)]="newContent" class="commentBox" placeholder="What are your thoughts?"></ion-textarea>
   <!--comment button-->
   <ion-button id="newCommentButton" class="commentButton" (click)="submitResponse(newContent)">Comment</ion-button>
   <!--dynamic response-->
@@ -44,4 +44,9 @@
     <ion-button class="cardButton" fill="solid" (click)="openReply()">Reply</ion-button>
     <ion-button class="deleteButton" (click)="removeResponseFromLocalStorage(post.id, response.id)" fill="solid">Delete</ion-button>
   </ion-card>
+
+  <!--dynamic reply-->
+  <ion-textarea *ngIf="OpenReply" class="commentBox replyBox" fill="solid" placeholder="What are your thoughts?" [(ngModel)]="newReply"></ion-textarea>
+  <ion-button *ngIf="OpenReply" id="newReplyButton" class="commentButton replyButton" (click)="submitReply(newReply)">Reply</ion-button>
+  <!--(click)="submitResponse(newContent)"-->
 </ion-content>
