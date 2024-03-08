@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NavigationService } from '../Services/navigation.service';
+import { Request, Response } from 'express';
+import { connect } from "../database/database.service"
+import Post from '../model/Post';
+//import { fs } from 'fs';
 //import { NavController } from 'ionic-angular';
 
 @Component({
@@ -18,7 +22,7 @@ export class WelcomePage {
 
   navigateTo(destination: string){
     this.ns.navigateTo(destination);
-  }
+  }//
 
 
   public getData(): Observable<any>{
@@ -27,126 +31,101 @@ export class WelcomePage {
     console.log(temp['source']);
     console.log(temp['operator']);
     return temp;
-
-
   }
+    /* Create Program*/
 
 
-//Source: https://learn.microsoft.com/en-us/azure/mysql/flexible-server/connect-nodejs?tabs=windows
 
-/* Create Program
-const mysql = require('mysql2');
-const fs = require('fs');
 
-var config =
-{
-    host: 'your_server_name.mysql.database.azure.com',
-    user: 'your_admin_name',
-    password: 'your_admin_password',
-    database: 'quickstartdb',
-    port: 3306,
-    ssl: {ca: fs.readFileSync("your_path_to_ca_cert_file_DigiCertGlobalRootCA.crt.pem")}
-};
-
-const conn = new mysql.createConnection(config);
-
-conn.connect(
-    function (err) {
-    if (err) {
-        console.log("!!! Cannot connect !!! Error:");
-        throw err;
-    }
-    else
+    /*function queryDatabase()
     {
-        console.log("Connection established.");
-        queryDatabase();
-    }
-});
-
-function queryDatabase()
-{
-    conn.query('DROP TABLE IF EXISTS inventory;',
-        function (err, results, fields) {
-            if (err) throw err;
-            console.log('Dropped inventory table if existed.');
-        }
-    )
-    conn.query('CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);',
-        function (err, results, fields) {
-            if (err) throw err;
-            console.log('Created inventory table.');
-        }
-    )
-    conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['banana', 150],
-        function (err, results, fields) {
-            if (err) throw err;
-            else console.log('Inserted ' + results.affectedRows + ' row(s).');
-        }
-    )
-    conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['orange', 250],
-        function (err, results, fields) {
-            if (err) throw err;
-            console.log('Inserted ' + results.affectedRows + ' row(s).');
-        }
-    )
-    conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['apple', 100],
-        function (err, results, fields) {
-            if (err) throw err;
-            console.log('Inserted ' + results.affectedRows + ' row(s).');
-        }
-    )
-    conn.end(function (err) {
-        if (err) throw err;
-        else  console.log('Done.')
-    });
-};
-*/
-
-/* Read Program
-const mysql = require('mysql2');
-const fs = require('fs');
-
-var config =
-{
-    host: 'your_server_name.mysql.database.azure.com',
-    user: 'your_admin_name',
-    password: 'your_admin_password',
-    database: 'quickstartdb',
-    port: 3306,
-    ssl: {ca: fs.readFileSync("your_path_to_ca_cert_file_DigiCertGlobalRootCA.crt.pem")}
-};
-
-const conn = new mysql.createConnection(config);
-
-conn.connect(
-    function (err) {
-        if (err) {
-            console.log("!!! Cannot connect !!! Error:");
-            throw err;
-        }
-        else {
-            console.log("Connection established.");
-            readData();
-        }
-    });
-
-function readData(){
-    conn.query('SELECT * FROM inventory',
-        function (err, results, fields) {
-            if (err) throw err;
-            else console.log('Selected ' + results.length + ' row(s).');
-            for (i = 0; i < results.length; i++) {
-                console.log('Row: ' + JSON.stringify(results[i]));
+        conn.query('DROP TABLE IF EXISTS inventory;',
+            function (err, results, fields) {
+                if (err) throw err;
+                console.log('Dropped inventory table if existed.');
             }
-            console.log('Done.');
-        })
-    conn.end(
-        function (err) {
+        )
+        conn.query('CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);',
+            function (err, results, fields) {
+                if (err) throw err;
+                console.log('Created inventory table.');
+            }
+        )
+        conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['banana', 150],
+            function (err, results, fields) {
+                if (err) throw err;
+                else console.log('Inserted ' + results.affectedRows + ' row(s).');
+            }
+        )
+        conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['orange', 250],
+            function (err, results, fields) {
+                if (err) throw err;
+                console.log('Inserted ' + results.affectedRows + ' row(s).');
+            }
+        )
+        conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['apple', 100],
+            function (err, results, fields) {
+                if (err) throw err;
+                console.log('Inserted ' + results.affectedRows + ' row(s).');
+            }
+        )
+        conn.end(function (err) {
             if (err) throw err;
-            else  console.log('Closing connection.')
-    });
+            else  console.log('Done.')
+        });
+        };
+        */
+    }
+
+    //Source: https://learn.microsoft.com/en-us/azure/mysql/flexible-server/connect-nodejs?tabs=windows
+
+
+
+    /* Read Program
+    const mysql = require('mysql2');
+    const fs = require('fs');
+
+    var config =
+    {
+        host: 'your_server_name.mysql.database.azure.com',
+        user: 'your_admin_name',
+        password: 'your_admin_password',
+        database: 'quickstartdb',
+        port: 3306,
+        ssl: {ca: fs.readFileSync("your_path_to_ca_cert_file_DigiCertGlobalRootCA.crt.pem")}
+    };
+
+    const conn = new mysql.createConnection(config);
+
+    conn.connect(
+        function (err) {
+            if (err) {
+                console.log("!!! Cannot connect !!! Error:");
+                throw err;
+            }
+            else {
+                console.log("Connection established.");
+                readData();
+            }
+        });
+
+    function readData(){
+        conn.query('SELECT * FROM inventory',
+            function (err, results, fields) {
+                if (err) throw err;
+                else console.log('Selected ' + results.length + ' row(s).');
+                for (i = 0; i < results.length; i++) {
+                    console.log('Row: ' + JSON.stringify(results[i]));
+                }
+                console.log('Done.');
+            })
+        conn.end(
+            function (err) {
+                if (err) throw err;
+                else  console.log('Closing connection.')
+        });
 };
-*/
+
 
 /* Update Program
 const mysql = require('mysql2');
