@@ -4,4 +4,5 @@ export interface Response {
     username: string,
     content: string;
     likeButtonState: boolean;
+    replies: Response[];
 }
