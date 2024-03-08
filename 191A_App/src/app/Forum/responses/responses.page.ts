@@ -21,6 +21,9 @@ export class ResponsesPage implements OnInit {
   newContent: string = '';
   newReply: string = '';
   public OpenReply:boolean = false;
+
+  replyCount: number = 0;
+
   constructor(private route: ActivatedRoute, private alertController: AlertController, private router:Router) { 
   }
 
@@ -67,6 +70,11 @@ export class ResponsesPage implements OnInit {
     localStorage.setItem('responseCount', this.responseCount.toString());
   }
 
+  incrementReplyCount() {
+    this.replyCount++;
+    localStorage.setItem('replyCount', this.replyCount.toString());
+  }
+
   // adds response to the list of the post
   submitResponse(newResponse:string) {
     // Check if subject and comment are not empty before adding to posts array
@@ -79,7 +87,7 @@ export class ResponsesPage implements OnInit {
         username: "Anon",
         content: this.newContent,
         likeButtonState: false,
-        responses: []
+        replies: []
         };
       this.responses.push(newResponse);
       this.saveResponses();
@@ -125,7 +133,7 @@ export class ResponsesPage implements OnInit {
   // alert for empty input fields
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Missing comment.',
+      header: 'Missing comment or reply.',
       subHeader: '',
       message: '',
       buttons: ['Try again'],
@@ -146,28 +154,29 @@ export class ResponsesPage implements OnInit {
     this.OpenReply = !this.OpenReply;
   }
 
-  submitReply(newResponse:string) {
-    // Check if subject and comment are not empty before adding to posts array
-    if (newResponse.trim() !== '') {
-      // this.incrementResponseCount();
-      // // Add the new post to the array
-      // const newResponse: Response = {
-      //   id: this.responseCount,
-      //   postId: 0,
-      //   username: "Anon",
-      //   content: this.newContent,
-      //   likeButtonState: false,
-      //   responses: []
-      //   };
-      // this.responses.push(newResponse);
-      // this.saveResponses();
-      // Clear the input fields
-      this.newContent = '';
-      this.OpenReply = !this.OpenReply;
-    }
-    else{
-      // alert
-      this.presentAlert();
-    }
+   // adds response to the list of the post
+ submitReply(newReply:string) {
+  // Check if subject and comment are not empty before adding to posts array
+  if (newReply.trim() !== '') {
+    // this.incrementReplyCount();
+    // // Add the new post to the array
+    // const newResponse: Response = {
+    //   id: this.replyCount,
+    //   postId: 0,
+    //   username: "Anon",
+    //   content: this.newReply,
+    //   likeButtonState: false,
+    //   responses: []
+    //   };
+    // this.responses[].replies.push(newReply);
+    // this.saveReplies();
+    // Clear the input fields
+    this.newReply = '';
+    this.OpenReply = !this.OpenReply;
   }
+  else{
+    // alert
+    this.presentAlert();
+  }
+}
 }

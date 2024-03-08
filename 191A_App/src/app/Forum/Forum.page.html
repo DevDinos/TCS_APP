@@ -22,23 +22,26 @@
   <!--dynamic ion-cards for posts-->
   <ion-card *ngFor="let post of posts">
     <ion-card-header>
-      <ion-card-title>{{ post.subject }}</ion-card-title>
+      <ion-card-title class="postTitle">{{ post.subject }}</ion-card-title>
       <ion-card-subtitle></ion-card-subtitle>
     </ion-card-header>
   
-    <ion-card-content style="--font-size: var(--base-font-size)">
+    <ion-card-content class="postContent">
       {{ post.content }}
     </ion-card-content>
   
-    <ion-button [class.default-likeButton]="!post.likeButtonState" [class.clicked-likeButton]="post.likeButtonState" (click)="toggleButtonState(post)" class="likeButton" fill="solid">
+    <ion-button [class.default-likeButton]="!post.likeButtonState" [class.clicked-likeButton]="post.likeButtonState" (click)="toggleButtonState(post)" class="cardButton likeButton" fill="solid">
       Like <ion-icon slot="end" name="thumbs-up-outline"></ion-icon></ion-button>
-    <ion-button class="responseButton" [routerLink]="['/responses', post.id]" fill="solid" color="primary">See responses</ion-button>
-    <ion-button class="deleteButton" (click)="removePostFromLocalStorage(post.id)" fill="solid">Delete</ion-button>
+    <ion-button class="cardButton responseButton" [routerLink]="['/responses', post.id]" fill="solid">Response(s)</ion-button>
+    <ion-button class="cardButton deleteButton" (click)="removePostFromLocalStorage(post.id)" fill="solid">Delete</ion-button>
   </ion-card>
 
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button (click)="zoomIn()" color="secondary">
-      <ion-icon name="add"></ion-icon>
+    <ion-fab-button (click)="zoomIn()" class="zoomButton">
+      <ion-icon name="add" class="zoomIcon"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="zoomOut()" class="zoomButton">
+      <ion-icon name="remove-outline" class="zoomIcon"></ion-icon>
     </ion-fab-button>
     <ion-fab-button (click)="zoomOut()" color="secondary">
       <ion-icon name="remove-outline"></ion-icon>
