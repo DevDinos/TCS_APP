@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, PopoverController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/post';
 import { Response } from 'src/app/response';
 import { PostModalComponent } from 'src/app/post-modal/post-modal.component';
@@ -20,6 +19,8 @@ export class ResponsesPage implements OnInit {
   responseCount: number = 0;
   newUsername: string ='';
   newContent: string = '';
+  newReply: string = '';
+  public OpenReply:boolean = false;
   constructor(private route: ActivatedRoute, private alertController: AlertController, private router:Router) { 
   }
 
@@ -39,7 +40,7 @@ export class ResponsesPage implements OnInit {
   navigateBack(){
     this.router.navigate(["/tabs/Forum"]);
   }
-
+  
   // loads post and responses already from the post
   loadPostAndResponsesFromLocalStorage(postId: number) {
     // Retrieve posts from Local Storage
@@ -67,22 +68,22 @@ export class ResponsesPage implements OnInit {
   }
 
   // adds response to the list of the post
-  submitResponse(newUsername:string, newResponse:string) {
+  submitResponse(newResponse:string) {
     // Check if subject and comment are not empty before adding to posts array
-    if (newUsername.trim() !== '' && newResponse.trim() !== '') {
+    if (newResponse.trim() !== '') {
       this.incrementResponseCount();
       // Add the new post to the array
       const newResponse: Response = {
         id: this.responseCount,
         postId: 0,
-        username: this.newUsername,
+        username: "Anon",
         content: this.newContent,
-        likeButtonState: false
+        likeButtonState: false,
+        responses: []
         };
       this.responses.push(newResponse);
       this.saveResponses();
       // Clear the input fields
-      this.newUsername = '';
       this.newContent = '';
     }
     else{
@@ -124,7 +125,7 @@ export class ResponsesPage implements OnInit {
   // alert for empty input fields
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Missing username and/or comment.',
+      header: 'Missing comment.',
       subHeader: '',
       message: '',
       buttons: ['Try again'],
@@ -142,6 +143,31 @@ export class ResponsesPage implements OnInit {
   openReply() {
     // not sure if i want to implement bc it requires another layer of responses
     // can the response interface have its own responses[]
+    this.OpenReply = !this.OpenReply;
   }
 
+  submitReply(newResponse:string) {
+    // Check if subject and comment are not empty before adding to posts array
+    if (newResponse.trim() !== '') {
+      // this.incrementResponseCount();
+      // // Add the new post to the array
+      // const newResponse: Response = {
+      //   id: this.responseCount,
+      //   postId: 0,
+      //   username: "Anon",
+      //   content: this.newContent,
+      //   likeButtonState: false,
+      //   responses: []
+      //   };
+      // this.responses.push(newResponse);
+      // this.saveResponses();
+      // Clear the input fields
+      this.newContent = '';
+      this.OpenReply = !this.OpenReply;
+    }
+    else{
+      // alert
+      this.presentAlert();
+    }
+  }
 }
