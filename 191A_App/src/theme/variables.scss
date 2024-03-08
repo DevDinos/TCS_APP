@@ -74,6 +74,11 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** font **/
+  --content-font-size: 19px; // Define your base font size
+  --post-title-font-size: 30px;
+  --zoom-factor: 1; // Initial zoom factor
 }
 
 @media (prefers-color-scheme: dark) {

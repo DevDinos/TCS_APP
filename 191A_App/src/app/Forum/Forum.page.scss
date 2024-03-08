@@ -40,7 +40,7 @@ div {
     --border-width: 2px;
     --border-color: #fd800b;
     color: black;
-    margin-left: 11px;
+    margin-left: 23px;
     margin-bottom: 20px;
     --background-activated: #e49f55;
 }
@@ -57,6 +57,7 @@ div {
     --border-width: 2px;
     --border-color: #fd800b;
     color: black;
+    --background-activated: #e49f55;
 }
 
 ion-textarea {
@@ -93,6 +94,8 @@ ion-searchbar input.searchbar-input {
     --border-style: solid;
     --border-width: 2px;
     --border-color: #fd800b;
+    --background: #febd79;
+    --background-activated: #e49f55;
 }
 
 .zoomIcon {
