@@ -1,10 +1,18 @@
-ion-toolbar {
-    --background-color: #ff6b65;
-    --height: 60px;
-}
+// ion-toolbar {
+//     // color: hsl(2, 100%, 70%) !important;
+//     // height: 70px !important;
+// }
 
-ion-title {
-    font-size: 35px;
+.title {
+    height: 70px !important;
+    font-size: 32px;
+    // background-color: #ff6b65;
+    color: white;
+}
+div {
+    height: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #cancelButton {
@@ -19,58 +27,78 @@ ion-title {
     right: 20px;
 }
 
-.likeButton {
-    margin-right: 12px;
-    margin-left: 12px;
-    margin-bottom: 20px;
-    --border-radius: 30px;
-    --background: #febd79;
-    // --background-activated: #fa8072;
-}
- //change likeButton when clicked using isClicked boolean
-.likeButton.clicked {
-    --background: #ff6b65;
-}
-
-.responseButton {
-    margin-right: 12px;
-    margin-left: 12px;
-    margin-bottom: 20px;
-    --border-radius: 30px;
-    --background: dodgerblue;
-}
-
 .deleteButton {
-    margin-right: 12px;
-    margin-left: 12px;
+    --background: rgb(211, 211, 211) !important;
+    // color: white !important;
+    --border-width: 0px !important;
+}
+
+.cardButton {
+    // --background: #ff6b65;
+    --background: #febd79;
+    --border-style: solid;
+    --border-width: 2px;
+    --border-color: #fd800b;
+    color: black;
+    margin-left: 11px;
     margin-bottom: 20px;
-    --border-radius: 30px;
-    // royal blue
-    // --background: rgb(30, 30, 242);
-    --background: rgb(64, 64, 64);
+    --background-activated: #e49f55;
 }
 
 #newPostButton {
-    margin-left: 30%;
+    width: 380px;
+    margin: auto;
     margin-top: 10px;
-    --border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    --background: #febd79;
+    --border-style: solid;
+    --border-width: 2px;
+    --border-color: #fd800b;
+    color: black;
 }
 
 ion-textarea {
     // try to make buttons not disappear when post gets too big
     --max-length: 100px;
 }
-
-.default-likeButton {
-    --background: dodgerblue !important; /* Use !important to override Ionic's default styles */
-}
   
 .clicked-likeButton {
     // red
     // --background: #E62F54 !important; /* Use !important to override Ionic's default styles */
-    --background: #ff6b65;
+    // --background: #904b48;
+    --background: #c4fa94;
+    --border-color: #87b361;
+    // color: white !important;
 }
 
-ion-toast {
+.submittedToast {
     --text-align: center;
+}
+
+.h1 {
+    font-size: calc(var(--post-title-font-size) * var(--zoom-factor)) !important;
+}
+
+.h2 {
+    font-size: calc(var(--content-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
+}
+
+ion-searchbar input.searchbar-input {
+    font-size: calc(var(--content-font-size) * var(--zoom-factor)) !important;
+}
+
+.zoomButton {
+    --border-style: solid;
+    --border-width: 2px;
+    --border-color: #fd800b;
+}
+
+.zoomIcon {
+    color: black;
+}
+
+ion-label {
+    font-size: var(--content-font-size);
 }

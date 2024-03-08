@@ -23,12 +23,12 @@
       </ion-card-content>
     </ion-card>
   </ion-header>
-  <!--comment user-->
-  <ion-input [(ngModel)]="newUsername" class="commentUserBox" fill="solid" width="50"  placeholder="Enter your username"></ion-input>
+  <!-- comment user
+  <ion-input [(ngModel)]="newUsername" class="commentUserBox" fill="solid" width="50"  placeholder="Enter your username"></ion-input> -->
   <!--comment textbox-->
   <ion-textarea [(ngModel)]="newContent" class="commentBox" fill="solid" width="50"  placeholder="What are your thoughts?"></ion-textarea>
   <!--comment button-->
-  <ion-button id="newCommentButton" class="commentButton" (click)="submitResponse(newUsername, newContent)">Comment</ion-button>
+  <ion-button id="newCommentButton" class="commentButton" (click)="submitResponse(newContent)">Comment</ion-button>
   <!--dynamic response-->
   <ion-card *ngFor="let response of responses"> 
     <ion-card-header>

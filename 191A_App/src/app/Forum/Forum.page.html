@@ -28,10 +28,10 @@
       {{ post.content }}
     </ion-card-content>
   
-    <ion-button [class.default-likeButton]="!post.likeButtonState" [class.clicked-likeButton]="post.likeButtonState" (click)="toggleButtonState(post)" class="likeButton" fill="solid">
+    <ion-button [class.default-likeButton]="!post.likeButtonState" [class.clicked-likeButton]="post.likeButtonState" (click)="toggleButtonState(post)" class="cardButton likeButton" fill="solid">
       Like <ion-icon slot="end" name="thumbs-up-outline"></ion-icon></ion-button>
-    <ion-button class="responseButton" [routerLink]="['/responses', post.id]" fill="solid">See responses</ion-button>
-    <ion-button class="deleteButton" (click)="removePostFromLocalStorage(post.id)" fill="solid">Delete</ion-button>
+    <ion-button class="cardButton responseButton" [routerLink]="['/responses', post.id]" fill="solid">See responses</ion-button>
+    <ion-button class="cardButton deleteButton" (click)="removePostFromLocalStorage(post.id)" fill="solid">Delete</ion-button>
   </ion-card>
 
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
