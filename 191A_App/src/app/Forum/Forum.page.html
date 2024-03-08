@@ -10,7 +10,7 @@
   <!-- back button -->
   <ion-button href="/tabs/HomePage">
     <ion-icon name="arrow-back-outline"></ion-icon>
-    <ion-label style="--font-size: var(--base-font-size)">Back</ion-label>
+    <ion-label>Back</ion-label>
   </ion-button>
   <!-- search bar -->
   <ion-searchbar show-clear-button="never"></ion-searchbar>
@@ -22,11 +22,11 @@
   <!--dynamic ion-cards for posts-->
   <ion-card *ngFor="let post of posts">
     <ion-card-header>
-      <ion-card-title style="--font-size: var(--post-title-font-size)" class="h1">{{ post.subject }}</ion-card-title>
+      <ion-card-title class="postTitle">{{ post.subject }}</ion-card-title>
       <ion-card-subtitle></ion-card-subtitle>
     </ion-card-header>
   
-    <ion-card-content style="--font-size: var(--content-font-size)" class="h2">
+    <ion-card-content class="postContent">
       {{ post.content }}
     </ion-card-content>
   

@@ -1,16 +1,13 @@
-// ion-toolbar {
-//     // color: hsl(2, 100%, 70%) !important;
-//     // height: 70px !important;
-// }
+ion-toolbar {
+    height: 55px !important;
+    --padding-top: 10px;
+    background-color: #ff6b65;
+}
 
-.title {
-    height: 70px !important;
-    font-size: 32px;
-    // background-color: #ff6b65;
-    color: white;
+ion-title {
+    font-size: var(--title-font-size) !important;
 }
 div {
-    height: 80px;
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -78,12 +75,12 @@ ion-textarea {
     --text-align: center;
 }
 
-.h1 {
-    font-size: calc(var(--post-title-font-size) * var(--zoom-factor)) !important;
+.postTitle {
+    font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important;
 }
 
-.h2 {
-    font-size: calc(var(--content-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
+.postContent {
+    font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
 }
 
 ion-searchbar input.searchbar-input {
@@ -93,15 +90,19 @@ ion-searchbar input.searchbar-input {
 .zoomButton {
     --border-style: solid;
     --border-width: 2px;
-    --border-color: #fd800b;
-    --background: #febd79;
-    --background-activated: #e49f55;
+    // --border-color: #fd800b;
+    // --background: #febd79;
+    // --background-activated: #e49f55;
+    --border-color: #d9443e;
+    --background: #ff6b65;
+    --background-activated: #c73934;
 }
 
 .zoomIcon {
-    color: black;
+    // color: black;
+    color:white;
 }
 
 ion-label {
-    font-size: var(--content-font-size);
+    font-size: var(--h3-font-size);
 }
