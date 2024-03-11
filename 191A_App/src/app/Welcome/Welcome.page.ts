@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NavigationService } from '../Services/navigation.service';
-import { Request, Response } from 'express';
-import { connect } from "../database/database.service"
-import Post from '../model/Post';
+import { createPost, deletePost, getPost, getPosts, updatePost } from '../controllers/posts.controller';
+
+
 //import { fs } from 'fs';
 //import { NavController } from 'ionic-angular';
 
