@@ -3,25 +3,25 @@
 
   <!-- De-Comment the below code to add navbar! -->
   
-  <ion-tab-bar *ngIf="currentPage != 'None'" slot="bottom">
+  <ion-tab-bar *ngIf="currentPage != 'None'" slot="bottom" class="navBar">
 
     <ion-tab-button tab="HomePage" (click)="navigateTo('HomePage')">
-      <!--<ion-icon aria-hidden="true" name="square" *ngIf="currentPage == 'HomePage'"></ion-icon>-->
+      <ion-icon name="home-outline"></ion-icon>
       <ion-label>HomePage</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="Forum" (click)="navigateTo('Forum')">
-      <!--<ion-icon aria-hidden="true" name="square" *ngIf="currentPage == 'Forum'"></ion-icon>-->
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
       <ion-label>Forum</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="Calendar" (click)="navigateTo('Calendar')">
-      <!--<ion-icon aria-hidden="true" name="square" *ngIf="currentPage == 'Calendar'"></ion-icon>-->
+      <ion-icon name="calendar-outline"></ion-icon>
       <ion-label>Calendar</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="Resources" (click)="navigateTo('Resources')">
-      <!--<ion-icon aria-hidden="true" name="square" *ngIf="currentPage == 'Resources'"></ion-icon>-->
+      <ion-icon name="book-outline"></ion-icon>
       <ion-label>Resources</ion-label>
     </ion-tab-button>
 
