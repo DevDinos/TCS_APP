@@ -8,19 +8,27 @@
 
 <ion-content [fullscreen]="true">
 
-<ion-button (click)="navigateTo('Welcome')">Back
-  <ion-icon name="arrow-back-outline"></ion-icon>
-</ion-button>
+  <ion-button id="backButton" (click)="navigateTo('Welcome')">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    <ion-label>
+      Back
+    </ion-label>
+  </ion-button>
 
-<ion-list>
-  <ion-item>
-    <ion-input placeholder="Enter Username or Email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input placeholder="Enter Password"></ion-input>
-  </ion-item>
-</ion-list>
+  <h1>Log in:</h1>
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Enter Username or Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Enter Password"></ion-input>
+    </ion-item>
+  </ion-list>
 
-<ion-button (click)="navigateTo('HomePage')">Login</ion-button>
+  <ion-button id="login" (click)="navigateTo('HomePage')">
+    <ion-label>
+      Login
+    </ion-label>
+  </ion-button>
 
 </ion-content>
