@@ -14,12 +14,16 @@
     color:white;
 }
 
+ion-tite {
+    font-size: var(--title-font-size);
+}
+
 .resourceTitle {
-    font-size: var(--h2-font-size);
+    font-size: var(--h1-font-size);
 }
 
 .resourceContent {
-    font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
+    font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
 }
 
 ion-item{
@@ -27,4 +31,13 @@ ion-item{
     background-color: var(--ion-color-secondary);
     border: 3px solid var(--ion-color-secondary-shade);
     border-radius: 10px;
+}
+
+#backButton {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+ion-label {
+    font-size: var(--h3-font-size);
 }

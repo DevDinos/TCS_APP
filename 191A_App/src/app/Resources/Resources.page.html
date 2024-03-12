@@ -7,8 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click)="navigateTo('HomePage')">Back
+  <ion-button id="backButton" (click)="navigateTo('HomePage')">
     <ion-icon name="arrow-back-outline"></ion-icon>
+    <ion-label>
+      Back
+    </ion-label>
   </ion-button>
 
   <ion-accordion-group>
