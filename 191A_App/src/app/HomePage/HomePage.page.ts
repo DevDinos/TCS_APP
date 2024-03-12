@@ -14,6 +14,7 @@ import { NavigationService } from '../Services/navigation.service';
 export class HomePagePage {
   checkinButton: boolean = false;
 
+  zoomFactor = 1;
   constructor(private modalCtrl: ModalController, private modalService: ModalService, private tabsPage: TabsPage, private ns: NavigationService){
     console.log('HomePagePage constructor, flag: ', this.modalService.modalAlreadyShown);
   }
@@ -62,5 +63,17 @@ export class HomePagePage {
     this.checkinButton = true;
     this.ionViewDidEnter();
   }
+
+  // Method to increase font size
+zoomIn() {
+  this.zoomFactor += 0.1; // Increase zoom factor by 0.1
+  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+}
+
+// Method to decrease font size
+zoomOut() {
+  this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
+  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+}
 }
 

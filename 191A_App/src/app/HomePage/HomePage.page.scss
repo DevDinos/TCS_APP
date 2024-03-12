@@ -40,4 +40,28 @@
   
   .container ion-button {
     margin: 10px;
+    height: 80px !important;
+  }
+
+  ion-title {
+    font-size: var(--title-font-size) !important;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 45px;
+    font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
+  }
+
+ ion-label {
+    font-size: var(--h3-font-size);
+  }
+
+  #helpline {
+    margin-left: 157px;
+    margin-top: 15px;
+  }
+
+  #backButton {
+    margin-top: 15px;
   }
