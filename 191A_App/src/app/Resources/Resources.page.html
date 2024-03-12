@@ -14,9 +14,9 @@
   <ion-accordion-group>
     <ion-accordion value="first" style="padding: 8px 16px">
       <ion-item slot="header" color="--ion-color-light" style="border: 3px solid var(--ion-color-primary); border-radius: 10px;">
-        <ion-label style="margin: 0 auto;">Family</ion-label>
+        <ion-label style="margin: 0 auto;" class="resourceTitle">Family</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
+      <div class="ion-padding" slot="content" class = "resourceContent">
         <p>
           In our Family Resources section, we prioritize the significance of fostering strong connections with family members to enhance the overall well-being of the elderly. Effective communication lies at the heart of these relationships, and our resources offer tailored guidance on various communication strategies catering to the unique needs of seniors.
         </p>
@@ -77,9 +77,9 @@ For those looking to delve deeper into family-related topics, we recommend explo
     </ion-accordion>
     <ion-accordion value="second" style="padding: 8px 16px">
       <ion-item slot="header" color="--ion-color-light" style="border: 3px solid var(--ion-color-primary); border-radius: 10px;">
-        <ion-label style="margin: 0 auto;">Finances</ion-label>
+        <ion-label style="margin: 0 auto;" class="resourceTitle">Finances</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
+      <div class="ion-padding" slot="content" class="resourceContent">
         <p>
         In our Finances Resources section, we recognize the importance of financial well-being, 
         especially in the context of retirement. We offer a comprehensive guide to managing finances, 
@@ -145,9 +145,9 @@ For those looking to delve deeper into family-related topics, we recommend explo
     </ion-accordion>
     <ion-accordion value="third" style="padding: 8px 16px">
       <ion-item slot="header" color="--ion-color-light" style="border: 3px solid var(--ion-color-primary); border-radius: 10px;">
-        <ion-label style="margin: 0 auto;">Health and Wellness</ion-label>
+        <ion-label style="margin: 0 auto;" class="resourceTitle">Health and Wellness</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
+      <div class="ion-padding" slot="content" class="resourceContent">
         <p>
           In our Health and Wellness Resources section, we prioritize the essential aspect of maintaining good health for a high quality of life, especially tailored to the specific needs of the elderly. Our resources cover a broad spectrum of topics related to physical, mental, and emotional well-being.
         </p>
@@ -199,3 +199,12 @@ For those looking to delve deeper into family-related topics, we recommend explo
       </div>
     </ion-accordion>
   </ion-accordion-group>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="zoomIn()" class="zoomButton">
+      <ion-icon name="add" class="zoomIcon"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="zoomOut()" class="zoomButton">
+      <ion-icon name="remove-outline" class="zoomIcon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>

@@ -1,0 +1,23 @@
+.zoomButton {
+    --border-style: solid;
+    --border-width: 2px;
+    // --border-color: #fd800b;
+    // --background: #febd79;
+    // --background-activated: #e49f55;
+    --border-color: #d9443e;
+    --background: #ff6b65;
+    --background-activated: #c73934;
+} 
+
+.zoomIcon {
+    // color: black;
+    color:white;
+}
+
+.resourceTitle {
+    font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
+}
+
+.resourceContent {
+    font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
+}
