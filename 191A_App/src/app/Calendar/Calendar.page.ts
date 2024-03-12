@@ -23,6 +23,8 @@ export class CalendarPage {
 
   selectedTab: String = "Your Events";
 
+  zoomFactor = 1;
+  
   constructor(private ns: NavigationService, private tabsPage: TabsPage) { 
     this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House; Sunrise St, Sunset Beach, CA, USA", 
                                           "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA"]);
@@ -61,6 +63,17 @@ export class CalendarPage {
     this.selectedTab = tabName;
   }
 
+  // Method to increase font size
+zoomIn() {
+  this.zoomFactor += 0.1; // Increase zoom factor by 0.1
+  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+}
+
+// Method to decrease font size
+zoomOut() {
+  this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
+  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+}
 }
 
 //New Class for the Calendar

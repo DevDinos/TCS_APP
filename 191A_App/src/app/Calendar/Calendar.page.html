@@ -7,19 +7,28 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click)="navigateTo('HomePage')">Back
+  <ion-button id="backButton" (click)="navigateTo('HomePage')">
     <ion-icon name="arrow-back-outline"></ion-icon>
+    <ion-label>
+      Back
+    </ion-label>
   </ion-button>
 
   <br>
-  <div class = "calendarTabs">
+  <div class="calendarTabs">
     <div class="calendarTabsGrid">
-      <button class="tab" (click)="tabSelection('Your Events')">Your Events
+      <button class="tab" (click)="tabSelection('Your Events')">
+        <ion-label>
+          Your Events
+        </ion-label>
         <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
       </button>
     
 
-      <button class="tab" (click)="tabSelection('Events')">Events
+      <button class="tab" (click)="tabSelection('Events')">
+        <ion-label>
+          Events
+        </ion-label>
         <div class="underline" *ngIf="selectedTab == 'Events'"></div>
       </button>
     </div>
@@ -55,7 +64,15 @@
 
   </ion-list>
   
-
+  <!--zoom buttons-->
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="zoomIn()" class="zoomButton">
+      <ion-icon name="add" class="zoomIcon"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="zoomOut()" class="zoomButton">
+      <ion-icon name="remove-outline" class="zoomIcon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   
   
 
