@@ -15,9 +15,16 @@
 }
 
 .resourceTitle {
-    font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
+    font-size: var(--h2-font-size);
 }
 
 .resourceContent {
     font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
+}
+
+ion-item{
+    color: black;
+    background-color: var(--ion-color-secondary);
+    border: 3px solid var(--ion-color-secondary-shade);
+    border-radius: 10px;
 }

@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar [style]="'--background: var(--ion-color-primary)'">
     <ion-title>
       Resources
     </ion-title>
@@ -13,8 +13,8 @@
 
   <ion-accordion-group>
     <ion-accordion value="first" style="padding: 8px 16px">
-      <ion-item slot="header" color="--ion-color-light" style="border: 3px solid var(--ion-color-primary); border-radius: 10px;">
-        <ion-label style="margin: 0 auto;" class="resourceTitle">Family</ion-label>
+      <ion-item slot="header" color="--ion-color-light">
+        <ion-label style="margin: 0 auto; color: black;" class="resourceTitle">Family</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content" class = "resourceContent">
         <p>
@@ -76,7 +76,7 @@ For those looking to delve deeper into family-related topics, we recommend explo
       </div>
     </ion-accordion>
     <ion-accordion value="second" style="padding: 8px 16px">
-      <ion-item slot="header" color="--ion-color-light" style="border: 3px solid var(--ion-color-primary); border-radius: 10px;">
+      <ion-item slot="header" color="--ion-color-light">
         <ion-label style="margin: 0 auto;" class="resourceTitle">Finances</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content" class="resourceContent">
@@ -144,7 +144,7 @@ For those looking to delve deeper into family-related topics, we recommend explo
       </div>
     </ion-accordion>
     <ion-accordion value="third" style="padding: 8px 16px">
-      <ion-item slot="header" color="--ion-color-light" style="border: 3px solid var(--ion-color-primary); border-radius: 10px;">
+      <ion-item slot="header" color="--ion-color-light">
         <ion-label style="margin: 0 auto;" class="resourceTitle">Health and Wellness</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content" class="resourceContent">

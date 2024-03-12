@@ -44,3 +44,19 @@ html {
     --ion-dynamic-font: var(--ion-default-dynamic-font);
     --ion-font-family: 'Myanmar Khyay';
 }
+
+ion-toolbar{
+    height: 60px;
+    background-color: var(--ionic-color-primary);
+    color: #FFFFFF
+}
+
+ion-title {
+    font-size: var(--title-font-size);
+    padding: 30px 20px;
+}
+
+ion-accordion ion-item {
+    --border-width: 0; /* Set border width to 0 */
+  }
+
