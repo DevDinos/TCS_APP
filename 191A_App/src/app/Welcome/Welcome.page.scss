@@ -1,0 +1,23 @@
+ion-title {
+    font-size: var(--title-font-size);
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    text-align: center;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    text-align: center;
+}
+
+ion-button {
+    display: flex;
+    margin: auto;
+    width: 200px;
+}
+
+ion-label {
+    font-size: var(--h3-font-size);
+}

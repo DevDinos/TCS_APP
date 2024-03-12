@@ -9,14 +9,26 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Welcome</ion-title>
+      <!-- <ion-title size="large">Welcome</ion-title> -->
     </ion-toolbar>
   </ion-header>
 
-  <h1>Welcome!</h1>
+  <h1>Welcome to Sunrise Connections!</h1>
+  <h2>Are you new here?</h2>
 
-  <ion-button (click)="navigateTo('AccountCreation')">Create Account</ion-button>
-  <ion-button (click)="navigateTo('Login')">Login</ion-button>
+  <ion-button id="createAcc" (click)="navigateTo('AccountCreation')">
+    <ion-label>
+      Create Account
+    </ion-label>
+  </ion-button>
+
+  <h2><u>OR</u></h2>
+  <h2>Are you a returning member?</h2>
+  <ion-button id="login" (click)="navigateTo('Login')">
+    <ion-label>
+      Log In
+    </ion-label>
+  </ion-button>
   <!--<ion-button (click)="getData()">getData</ion-button>-->
   
 
