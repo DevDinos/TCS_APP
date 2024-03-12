@@ -11,7 +11,6 @@ import { NavigationService } from '../Services/navigation.service';
   styleUrls: ['HomePage.page.scss']
 })
 
-
 export class HomePagePage {
   checkinButton: boolean = false;
 
@@ -33,7 +32,7 @@ export class HomePagePage {
   }
 
   async ionViewDidEnter() {
-    console.log('Starting to create modal, checkin button: ', this.checkinButton, this.modalService.checkModal());
+    console.log('Starting to create modal, checkin button: ', this.checkinButton);
     if(this.checkinButton){
       console.log('checkin click')
       const modal = await this.modalCtrl.create({
@@ -43,9 +42,8 @@ export class HomePagePage {
       modal.present();
       console.log('Modal Created: ', modal);
       const { data, role } = await modal.onWillDismiss();
-      this.checkinButton = false;
   
-    } else if(this.modalService.checkModal() === false){
+    } else if(!this.modalService.modalAlreadyShown){
       console.log('popup')
       const modal = await this.modalCtrl.create({
         component: CheckInPage,   
@@ -55,7 +53,7 @@ export class HomePagePage {
       console.log('Modal Created: ', modal);
       const { data, role } = await modal.onWillDismiss();
       
-      this.modalService.modalShown();
+      this.modalService.modalAlreadyShown = true;
     }
   }
 
@@ -65,3 +63,4 @@ export class HomePagePage {
     this.ionViewDidEnter();
   }
 }
+

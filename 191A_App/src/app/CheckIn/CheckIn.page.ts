@@ -21,7 +21,7 @@ export class CheckInPage {
   ngOnInit(){
     this.skipTrue = false;
   }
-  
+
   async showPart2() {
     if(this.skipTrue === true){
       await this.modalCtrl.dismiss();

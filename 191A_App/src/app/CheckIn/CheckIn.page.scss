@@ -1,5 +1,4 @@
 .checkin-size{
-    /*padding-top: 30%;*/
     text-align: center;
     display: flex; 
     flex-direction: column; 
@@ -9,8 +8,8 @@
 
 .icon-size{
     fill: white;
-    stroke: var(--ion-color-dark);
-    stroke-width: 10px;
+    stroke: black;
+    stroke-width: 4px;
     font-size: 80px;
 }
 
@@ -65,5 +64,5 @@ h3{
 }
 
 .mood-selected{
-    fill: var(--ion-color-like);
+    fill:#FF6B65;
 }

@@ -12,13 +12,13 @@
         <h3>How are you today?</h3>
         <ion-row class="middle">
           <ion-col size="4">
-            <ion-icon name="sad" [class.mood-selected]="selectedMood === 'sad'" class="icon-size" (click)="selectMood('sad')"></ion-icon>
+            <ion-icon src="assets/mood/sad.svg" [class.mood-selected]="selectedMood === 'sad'" class="icon-size" (click)="selectMood('sad')"></ion-icon>
           </ion-col>
           <ion-col size="4">
-            <ion-icon name="ellipsis-horizontal" [class.mood-selected]="selectedMood === 'neutral'" class="icon-size" (click)="selectMood('neutral')"></ion-icon>
+            <ion-icon src="assets/mood/neutral.svg" [class.mood-selected]="selectedMood === 'neutral'" class="icon-size" (click)="selectMood('neutral')"></ion-icon>
           </ion-col>
           <ion-col size="4">
-            <ion-icon name="happy" [class.mood-selected]="selectedMood === 'happy'" class="icon-size" (click)="selectMood('happy')"></ion-icon>
+            <ion-icon src="assets/mood/happy.svg" [class.mood-selected]="selectedMood === 'happy'" class="icon-size" (click)="selectMood('happy')"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-col>
