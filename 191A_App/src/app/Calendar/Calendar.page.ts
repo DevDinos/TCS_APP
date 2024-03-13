@@ -27,7 +27,8 @@ export class CalendarPage {
   
   constructor(private ns: NavigationService, private tabsPage: TabsPage) { 
     this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House; Sunrise St, Sunset Beach, CA, USA", 
-                                          "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA"]);
+                                          "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA",
+                                          "4:00pm;Stamp collection meeting at Renoir's place.; Duponte Lane, St. Petersburg, FL, USA"]);
     this.allEvents.set("Sun Jan 14 2024", ["1:00pm;Polo at Sunnyside Park.; Sunrise St, Sunset Beach, CA, USA", 
                                           "4:00pm;Hike by the Beach.; Coral St, Sunset Beach, CA, USA"]);
   }

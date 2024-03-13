@@ -15,32 +15,34 @@
   </ion-button>
 
   <br>
-  <div class="calendarTabs">
-    <div class="calendarTabsGrid">
-      <button class="tab" (click)="tabSelection('Your Events')">
-        <ion-label>
-          Your Events
-        </ion-label>
-        <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
-      </button>
-    
+  <div class="calendarInterfaceGrid">
+    <div class="calendarTabs">
+      <div class="calendarTabsGrid">
+        <button class="tab" (click)="tabSelection('Your Events')">
+          <ion-label>
+            Your Events
+          </ion-label>
+          <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
+        </button>
+      
 
-      <button class="tab" (click)="tabSelection('Events')">
-        <ion-label>
-          Events
-        </ion-label>
-        <div class="underline" *ngIf="selectedTab == 'Events'"></div>
-      </button>
+        <button class="tab" (click)="tabSelection('Events')">
+          <ion-label>
+            Events
+          </ion-label>
+          <div class="underline" *ngIf="selectedTab == 'Events'"></div>
+        </button>
+      </div>
+    </div>
+    <!--Starting the Calendar Here:-->
+    <!--The ngModel is equal to a variable inside the page.ts's class, and ionchange is pointing to a function within the same \
+      class that will display on the console a message with the date selected. 
+      This might be helpful since it shows the way the string looks.-->
+    <div class="calendar">
+      <ion-datetime presentation="date" [(ngModel)]="selectedDate" [(ngModel)]="myDate" (ionChange)="onDateSelectionChange($event)"></ion-datetime>
     </div>
   </div>
-  <!--Starting the Calendar Here:-->
-  <!--The ngModel is equal to a variable inside the page.ts's class, and ionchange is pointing to a function within the same \
-    class that will display on the console a message with the date selected. 
-    This might be helpful since it shows the way the string looks.-->
-  <div class="calendar">
-    <ion-datetime [(ngModel)]="selectedDate" [(ngModel)]="myDate" (ionChange)="onDateSelectionChange($event)"></ion-datetime>
-  </div>
-  <ion-list class="events">
+  <div class="calendarEvents">
     <!--<ion-card *ngFor="let event of selectedEvents">
       <ion-card-header>
         <ion-card-subtitle><b>Event</b></ion-card-subtitle>
@@ -54,16 +56,19 @@
         <b>Location:</b> {{event[2]}}
       </ion-card-content>
     </ion-card>-->
-    <div class="eventBox" *ngFor="let event of selectedEvents">
-      <p><b>Time:</b><br> {{event[0]}}
-      <br>
-      <b>Description:</b><br> {{event[1]}}
-      <br>
-      <b>Location:</b><br> {{event[2]}}</p>
+    <div class="events">
+      <div class="eventBox" *ngFor="let event of selectedEvents">
+        <p><b>Time:</b><br> {{event[0]}}
+        <br>
+        <b>Description:</b><br> {{event[1]}}
+        <br>
+        <b>Location:</b><br> {{event[2]}}</p>
+      </div>
     </div>
 
-  </ion-list>
-  
+  </div>
+
+
   <!--zoom buttons-->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="zoomIn()" class="zoomButton">
@@ -74,7 +79,7 @@
     </ion-fab-button>
   </ion-fab>
   
-  
+  <div class="buffer"></div>
 
   <!--<ion-datetime></ion-datetime>-->
   <!--<app-explore-container name="Calendar page"></app-explore-container>-->
