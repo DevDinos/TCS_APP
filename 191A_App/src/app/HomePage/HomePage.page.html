@@ -14,65 +14,26 @@
     </ion-label>
   </ion-button>
 
-  <ion-button id="helpline" (click)="navigateTo('Helpline')" color="danger">
-    <ion-icon name="call-outline"></ion-icon>
-    <ion-label>
-      Helpline
-    </ion-label>
-  </ion-button>
 
   <h1>Welcome to Sunrise Connections!</h1>
 
-  <div class="container">
-    <ion-button (click)="navigateTo('Resources')">
-      <ion-label>
-        Resources
-      </ion-label>
-      <ion-icon name="book-outline"></ion-icon>
-    </ion-button>
+  <h3 class="icebreakerHeading">Daily Icebreaker!</h3>
 
-    <ion-button (click)="navigateTo('Calendar')">
-      <ion-label>
-        Calendar
-      </ion-label>
-      <ion-icon name="calendar-outline"></ion-icon>
-    </ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="postTitle">Favorite Foods</ion-card-title>
+    </ion-card-header>
+    <div class="food-icons-grid">
+      <ion-icon class="food-grid-item" name="pizza-outline"></ion-icon>
+      <ion-icon class="food-grid-item" name="fast-food-outline"></ion-icon>
+      <ion-icon class="food-grid-item" name="ice-cream-outline"></ion-icon>
+    </div>
+  
+    <ion-button class="cardButton likeButton" fill="solid">
+      Responses</ion-button>
+    <ion-button class="cardButton responseButton" fill="solid">Share Thoughts<ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+  </ion-card>
 
-    <ion-button (click)="navigateTo('Games')">
-      <ion-label>
-        Games
-      </ion-label>
-      <ion-icon name="game-controller-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="navigateTo('Forum')">
-      <ion-label>
-        Forum
-      </ion-label>
-      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="navigateTo('Account')">
-      <ion-label>
-        Account
-      </ion-label>
-      <ion-icon name="person-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="navigateTo('Settings')">
-      <ion-label>
-        Settings
-      </ion-label>
-      <ion-icon name="settings-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="checkinClick()">
-      <ion-label>
-        Check-In
-      </ion-label>
-      <ion-icon name="happy-outline"></ion-icon>
-    </ion-button>
-  </div>
   <!--zoom buttons-->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="zoomIn()" class="zoomButton">
