@@ -45,8 +45,12 @@
     <ion-button class="deleteButton" (click)="removeResponseFromLocalStorage(post.id, response.id)" fill="solid">Delete</ion-button>
   </ion-card>
 
-  <!--dynamic reply-->
+  <!--dynamic open reply-->
   <ion-textarea *ngIf="OpenReply" class="commentBox replyBox" fill="solid" placeholder="What are your thoughts?" [(ngModel)]="newReply"></ion-textarea>
   <ion-button *ngIf="OpenReply" id="newReplyButton" class="commentButton replyButton" (click)="submitReply(newReply)">Reply</ion-button>
+  <!-- dynamic reply
+  <ion-card *ngFor="let response of responses"> 
+    <ion-card *ngFor="let reply of replies"></ion-card>
+  </ion-card> -->
   <!--(click)="submitResponse(newContent)"-->
 </ion-content>

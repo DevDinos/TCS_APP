@@ -1,6 +1,6 @@
 export interface Response {
     id: number;
-    postId: number;
+    responseId: number;
     username: string,
     content: string;
     likeButtonState: boolean;

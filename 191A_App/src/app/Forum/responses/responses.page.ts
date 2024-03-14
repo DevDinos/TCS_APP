@@ -79,7 +79,7 @@ export class ResponsesPage implements OnInit {
       // Add the new post to the array
       const newResponse: Response = {
         id: this.responseCount,
-        postId: 0,
+        responseId: 0,
         username: "Anon",
         content: this.newContent,
         likeButtonState: false,
