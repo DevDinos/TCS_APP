@@ -10,6 +10,8 @@ import { NavigationService } from '../Services/navigation.service';
 })
 export class LoginPage {
 
+  zoomFactor = 1;
+  
   constructor(private ts: TabsPage, private ns: NavigationService){
   }
 
@@ -21,4 +23,15 @@ export class LoginPage {
     }
   }
 
+    // Method to increase font size
+  zoomIn() {
+    this.zoomFactor += 0.1; // Increase zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
+
+  // Method to decrease font size
+  zoomOut() {
+    this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
 }
