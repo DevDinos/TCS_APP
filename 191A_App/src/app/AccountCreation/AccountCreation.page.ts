@@ -9,6 +9,8 @@ import { NavigationService } from '../Services/navigation.service';
 })
 export class AccountCreationPage {
 
+  zoomFactor = 1;
+
   constructor(private ns: NavigationService){
   }
 
@@ -16,4 +18,15 @@ export class AccountCreationPage {
     this.ns.navigateTo(destination);
   }
 
+  // Method to increase font size
+  zoomIn() {
+    this.zoomFactor += 0.1; // Increase zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
+
+  // Method to decrease font size
+  zoomOut() {
+    this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
 }

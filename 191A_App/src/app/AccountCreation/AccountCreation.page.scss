@@ -22,10 +22,10 @@ h1, h2 {
 }
 
 h1 {
-    font-size: var(--h1-font-size);
+    font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important;
 }
 
 h2 {
-    font-size: var(--h2-font-size);
+    font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
     margin-bottom: 30px;
 }
