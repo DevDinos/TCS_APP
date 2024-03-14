@@ -6,8 +6,8 @@
     grid-template-columns: 50%;
     grid-template-rows: 20% 30% auto;
     column-gap: 10%;
-    margin: -5% 0% 0% 32%;
-    width: 70%;
+    margin: -8% 0% 0% 32%;
+    width: 80%;
 }
 
 .calendarTabs {
@@ -28,12 +28,13 @@
 }
 
 .calendarEvents{
+    margin: 5% 0% 0% 2%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 28%);
     width: 50%;
-    height: 25em; /* Adjust as needed */
+    height: 35em; /* Adjust as needed */
     border: 0.3em solid rgb(0, 0, 0);
     padding: 0;
     overflow-y: auto;
@@ -103,12 +104,13 @@
 }
 
 .calendar{
-    padding-top: 20px;;
+    /*padding-top: 20px;;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0% 0% -35em 0%;
+    margin: 0% 0% -35em 0%;*/
+    margin: 15% 0% 0% 17%;
 }
 
 

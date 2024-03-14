@@ -12,6 +12,7 @@ import { NavigationService } from '../Services/navigation.service';
 })
 export class CalendarPage {
   allEvents = new Map<string, string[]>();
+  allMyEvents = new Map<string, string[]>();
 
   selectedDate: string = '';
 
@@ -21,7 +22,7 @@ export class CalendarPage {
 
   myDate: String = new Date().toISOString();
 
-  selectedTab: String = "Your Events";
+  selectedTab: String = "Events";
 
   zoomFactor = 1;
   
@@ -60,21 +61,47 @@ export class CalendarPage {
   }
 
   tabSelection(tabName: String){
-    //console.log(tabName);
+    console.log(tabName);
     this.selectedTab = tabName;
+    if (this.selectedTab == 'Events'){
+      this.onDateSelectionChange("None");
+    }
+    else {
+      this.selectedEvents = [];
+      let keys: any[] = Object.keys(this.allMyEvents);
+      keys.forEach((key) => {
+        this.selectedEvents.push(this.allMyEvents.get(key));
+      });
+    }
+  }
+
+  addEvent(event: string[]){
+    let eventStr = event.join(";");
+    console.log(this.formattedDate);
+    console.log(event);
+    if (!this.allMyEvents.has(this.formattedDate)){
+      this.allMyEvents.set(this.formattedDate, [eventStr])
+    }
+    /*else{
+      let tempEvents: string[] = (this.allMyEvents.get(this.formattedDate))?;
+      tempEvents.push(eventStr);
+      this.allMyEvents.set(this.formattedDate, tempEvents);
+    }*/
+    return null;
+
   }
 
   // Method to increase font size
-zoomIn() {
-  this.zoomFactor += 0.1; // Increase zoom factor by 0.1
-  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
-}
+  zoomIn() {
+    this.zoomFactor += 0.1; // Increase zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
 
-// Method to decrease font size
-zoomOut() {
-  this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
-  document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
-}
+  // Method to decrease font size
+  zoomOut() {
+    this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
 }
 
 //New Class for the Calendar
