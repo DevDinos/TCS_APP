@@ -176,3 +176,13 @@ ion-textarea {
   font-size: 100px;
   color: var(--ion-color-primary-tint)
 }
+
+.articleTitle{
+  font-size: calc(24px * var(--zoom-factor)); 
+  color: var(--ion-color-dark-shade);
+}
+
+ion-card{
+  border: 2px solid var(--ion-color-primary);
+  border-radius: 10px;
+}

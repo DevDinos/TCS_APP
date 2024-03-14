@@ -34,6 +34,18 @@
     <ion-button class="cardButton responseButton" fill="solid" [routerLink]="['/responses']">Share Thoughts<ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
   </ion-card>
 
+    <!-- Additional Content -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Featured Article</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2 class="articleTitle">Dating on a Budget</h2>
+        <p>Age is just a number when it comes to love, and seniors deserve to find happiness and companionship just as much as anyone else...</p>
+        <ion-button class="cardButton" fill="outline" routerLink="/article">Read More</ion-button>
+      </ion-card-content>
+    </ion-card>
+
   <!--zoom buttons-->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="zoomIn()" class="zoomButton">
