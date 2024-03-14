@@ -155,6 +155,8 @@ ion-textarea {
 
 .postTitle {
   font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important;
+  text-transform: none; /* Reset the text transformation to normal case */
+  text-align: center; /* Center-align the title */
 }
 
 .postContent {
