@@ -103,12 +103,6 @@ ion-label {
   --background: #ff6b65;
 }
 
-.responseButton {
-  margin-right: 12px;
-  margin-left: 12px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
 
 .deleteButton {
   --background: rgb(211, 211, 211) !important;
@@ -123,8 +117,6 @@ ion-label {
   --border-width: 2px;
   --border-color: #fd800b;
   color: black;
-  margin-left: 12px;
-  margin-bottom: 20px;
   --background-activated: #e49f55;
 }
 
@@ -182,4 +174,5 @@ ion-textarea {
 .food-grid-item{
   flex: 1;
   font-size: 100px;
+  color: var(--ion-color-primary-tint)
 }
