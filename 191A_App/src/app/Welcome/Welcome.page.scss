@@ -1,15 +1,19 @@
 ion-title {
-    font-size: var(--title-font-size);
+    font-size: calc(var(--title-font-size) * var(--zoom-factor)) !important;
 }
 
 h1 {
-    font-size: var(--h1-font-size);
+    font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important;
     text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 h2 {
-    font-size: var(--h2-font-size);
+    font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
     text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 ion-button {
@@ -19,7 +23,7 @@ ion-button {
 }
 
 ion-label {
-    font-size: var(--h3-font-size);
+    font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
 }
 
 #createAcc{
