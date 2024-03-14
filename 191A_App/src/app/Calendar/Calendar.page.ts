@@ -82,11 +82,11 @@ export class CalendarPage {
     if (!this.allMyEvents.has(this.formattedDate)){
       this.allMyEvents.set(this.formattedDate, [eventStr])
     }
-    /*else{
-      let tempEvents: string[] = (this.allMyEvents.get(this.formattedDate))?;
+    else{
+      let tempEvents: string[] = this.allMyEvents.get(this.formattedDate)||[];
       tempEvents.push(eventStr);
       this.allMyEvents.set(this.formattedDate, tempEvents);
-    }*/
+    }
     return null;
 
   }

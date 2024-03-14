@@ -28,15 +28,15 @@
 }
 
 .calendarEvents{
-    margin: 5% 0% 0% 2%;
+    margin: 0% 0% 0% 2%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 28%);
     width: 50%;
-    height: 35em; /* Adjust as needed */
+    height: 40em; /* Adjust as needed */
     border: 0.3em solid rgb(0, 0, 0);
-    padding: 0;
+    padding: 0% 0% 20% 0%;
     overflow-y: auto;
 
 }
@@ -83,7 +83,7 @@
 
 .buffer{
     position: absolute;
-    height: 50em;
+    height: 2em;
     width: 40%;  
     margin: 35% 0% 0% 31%;
 }
@@ -113,7 +113,10 @@
     margin: 15% 0% 0% 17%;
 }
 
-
+.test{
+    position: absolute;
+    z-index: 20;
+}
   
 /*ion-datetime::part(calendar-day today) {
     color: #8462d1;
