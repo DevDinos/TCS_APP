@@ -63,15 +63,33 @@ export class CalendarPage {
   tabSelection(tabName: String){
     console.log(tabName);
     this.selectedTab = tabName;
+    console.log(this.allMyEvents);
     if (this.selectedTab == 'Events'){
       this.onDateSelectionChange("None");
     }
     else {
-      this.selectedEvents = [];
-      let keys: any[] = Object.keys(this.allMyEvents);
+      /*this.selectedEvents = [];
+      let keys = this.allMyEvents.keys();
+      console.log(keys);
+      console.log("Else!!!");
       keys.forEach((key) => {
-        this.selectedEvents.push(this.allMyEvents.get(key));
-      });
+        console.log("Hello");
+        this.allMyEvents.get(key)?.forEach((strObj) => {
+          console.log("Hello Again");
+          let temp = strObj!.split(";");
+          this.selectedEvents.push(temp);
+        });
+      });*/
+      this.selectedEvents = [];
+      console.log("Else!!!");
+      this.allMyEvents.forEach((value: string[], key: string, map: Map<string, string[]>) => {
+        console.log(key);
+        this.allMyEvents.get(key)?.forEach((strObj) => {
+          console.log("Hello Again");
+          let temp = strObj!.split(";");
+          this.selectedEvents.push(temp);
+        });
+    });
     }
   }
 
@@ -87,8 +105,8 @@ export class CalendarPage {
       tempEvents.push(eventStr);
       this.allMyEvents.set(this.formattedDate, tempEvents);
     }
-    return null;
-
+    console.log("Adding");
+    console.log(this.allMyEvents);
   }
 
   // Method to increase font size
