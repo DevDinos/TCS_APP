@@ -1,36 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Sunrise Connections
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="welcome-page">
+  <div class="content">
+    <h1>Welcome to Sunrise Connections!</h1>
+    <h2>Are you new here?</h2>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <!-- <ion-title size="large">Welcome</ion-title> -->
-    </ion-toolbar>
-  </ion-header>
+    <ion-button id="createAcc" (click)="navigateTo('AccountCreation')" class="action-button">
+      <ion-label>Create Account</ion-label>
+    </ion-button>
 
-  <h1>Welcome to Sunrise Connections!</h1>
-  <h2>Are you new here?</h2>
+      <h3>OR</h3>
 
-  <ion-button id="createAcc" (click)="navigateTo('AccountCreation')">
-    <ion-label>
-      Create Account
-    </ion-label>
-  </ion-button>
+    <h2>Are you a returning member?</h2>
+    <ion-button id="login" (click)="navigateTo('Login')" class="action-button">
+      <ion-label>Log In</ion-label>
+    </ion-button>
 
-  <h2><u>OR</u></h2>
-  <h2>Are you a returning member?</h2>
-  <ion-button id="login" (click)="navigateTo('Login')">
-    <ion-label>
-      Log In
-    </ion-label>
-  </ion-button>
-  <!--<ion-button (click)="getData()">getData</ion-button>-->
-  <!--zoom buttons-->
+    <ion-icon class="sunrise-icon" name="partly-sunny-outline"></ion-icon>
+  </div>
+
+  <!-- Zoom buttons -->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="zoomIn()" class="zoomButton">
       <ion-icon name="add" class="zoomIcon"></ion-icon>
@@ -39,5 +26,4 @@
       <ion-icon name="remove-outline" class="zoomIcon"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>
