@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, PopoverController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/post';
 import { Response } from 'src/app/response';
-import { PostModalComponent } from 'src/app/post-modal/post-modal.component';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-responses',
@@ -24,7 +25,7 @@ export class ResponsesPage implements OnInit {
 
   replyCount: number = 0;
 
-  constructor(private route: ActivatedRoute, private alertController: AlertController, private router:Router) { 
+  constructor(private route: ActivatedRoute, private alertController: AlertController, private router:Router, private location:Location) { 
   }
 
   // initial page set-up
@@ -41,7 +42,7 @@ export class ResponsesPage implements OnInit {
   }
 
   navigateBack(){
-    this.router.navigate(["/tabs/Forum"]);
+    this.location.back();
   }
   
   // loads post and responses already from the post

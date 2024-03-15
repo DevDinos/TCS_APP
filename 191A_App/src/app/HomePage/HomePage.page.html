@@ -7,73 +7,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="content">
-  <ion-button id="backButton" (click)="navigateTo('Welcome')">
-    <ion-icon name="arrow-back-outline"></ion-icon>
-    <ion-label>
-      Back
-    </ion-label>
-  </ion-button>
-
-  <!-- <ion-button id="helpline" (click)="navigateTo('Helpline')" color="danger">
-    <ion-icon name="call-outline"></ion-icon>
-    <ion-label>
-      Helpline
-    </ion-label>
-  </ion-button> -->
 
   <h1>Welcome to Sunrise Connections!</h1>
 
-  <div class="container">
-    <ion-button (click)="navigateTo('Forum')">
-      <ion-label>
-        Forum
-      </ion-label>
-      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-    </ion-button>
+  <ion-card>
+    <ion-card-header>
+      <div style="text-align: left; margin: 0px;">
+        <ion-card-title class="postTitle">DAILY ICEBREAKER</ion-card-title>
+        <ion-card-subtitle style="font-size: 28px; text-align: left; text-transform: none;">Favorite Foods</ion-card-subtitle>
+      </div>
+    </ion-card-header>
+    <div class="food-icons-grid">
+      <ion-icon class="food-grid-item" name="pizza-outline"></ion-icon>
+      <ion-icon class="food-grid-item" name="fast-food-outline"></ion-icon>
+      <ion-icon class="food-grid-item" name="ice-cream-outline"></ion-icon>
+    </div>
+  
+    <ion-button class="cardButton likeButton" fill="solid" [routerLink]="['/responses']">
+      Responses</ion-button>
+    <ion-button class="cardButton responseButton" fill="solid" [routerLink]="['/responses']">Share Thoughts<ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+  </ion-card>
 
-    <ion-button (click)="navigateTo('Calendar')">
-      <ion-label>
-        Calendar
-      </ion-label>
-      <ion-icon name="calendar-outline"></ion-icon>
-    </ion-button>
+    <!-- Additional Content -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Featured Article</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2 class="articleTitle">Dating on a Budget</h2>
+        <p>Age is just a number when it comes to love, and seniors deserve to find happiness and companionship just as much as anyone else...</p>
+        <ion-button class="cardButton" fill="outline" routerLink="/article">Read More</ion-button>
+      </ion-card-content>
+    </ion-card>
 
-    <ion-button (click)="navigateTo('Resources')">
-      <ion-label>
-        Resources
-      </ion-label>
-      <ion-icon name="book-outline"></ion-icon>
-    </ion-button>
-
-    <!-- <ion-button (click)="navigateTo('Games')">
-      <ion-label>
-        Games
-      </ion-label>
-      <ion-icon name="game-controller-outline"></ion-icon>
-    </ion-button> -->
-
-    <ion-button (click)="navigateTo('Account')">
-      <ion-label>
-        Account
-      </ion-label>
-      <ion-icon name="person-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="checkinClick()">
-      <ion-label>
-        Check-In
-      </ion-label>
-      <ion-icon name="happy-outline"></ion-icon>
-    </ion-button>
-    
-    <ion-button (click)="navigateTo('Settings')">
-      <ion-label>
-        Settings
-      </ion-label>
-      <ion-icon name="settings-outline"></ion-icon>
-    </ion-button>
-
-  </div>
   <!--zoom buttons-->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="zoomIn()" class="zoomButton">
