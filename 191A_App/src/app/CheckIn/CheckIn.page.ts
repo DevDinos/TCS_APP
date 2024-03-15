@@ -25,28 +25,7 @@ export class CheckInPage {
   async showPart2() {
     if(this.skipTrue === true){
       await this.modalCtrl.dismiss();
-    
-      const modal = await this.modalCtrl.create({
-        component: CheckIn2Page,
-        cssClass: 'checkin-size',
-        componentProps:{
-          selectedMood: this.selectedMood,
-          submitDate: new Date()
-        }
-      });
-
-      modal.onWillDismiss().then((result) => {
-        if (result.role === 'complete') {
-          console.log('Modal complete')
-          this.modalCtrl.dismiss()
-        } else if(result.role === 'skip'){
-          console.log('Modal Skipped')
-          this.modalCtrl.dismiss();
-        }
-      });
-
-      await modal.present();
-      this.submitTime();
+      return;
     }
 
     if(!this.moodTrue){

@@ -17,7 +17,8 @@ export class CheckIn2Page{
    }
 
   getRandomImage(): string{
-    const imgPaths = ['assets/images/nature1.jpg', 'assets/images/nature2.jpg', 'assets/images/nature3.jpg', 'assets/images/animal1.jpg', 'assets/images/animal2.jpg', 'assets/images/animal3.jpg']
+    const imgPaths = ['assets/images/nature1.jpg', 'assets/images/nature2.jpg', 'assets/images/nature3.jpg', 'assets/images/nature4.jpg', 'assets/images/nature5.jpg', 'assets/images/nature6.jpg', 'assets/images/nature7.jpg', 'assets/images/nature8.jpg', 'assets/images/nature9.jpg',
+    'assets/images/animal1.jpg', 'assets/images/animal2.jpg', 'assets/images/animal3.jpg', 'assets/images/animal4.jpg', 'assets/images/animal5.jpg', 'assets/images/animal6.jpg', 'assets/images/animal7.jpg', 'assets/images/animal8.jpg', 'assets/images/animal9.jpg']
     const random = Math.floor(Math.random() * imgPaths.length);
     return imgPaths[random];
   }
