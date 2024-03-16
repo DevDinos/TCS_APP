@@ -109,6 +109,33 @@ export class CalendarPage {
     console.log(this.allMyEvents);
   }
 
+  removeEvent(event: string[]){
+    let eventStr = event.join(";");
+    console.log(this.formattedDate);
+    console.log(event);
+    /*this.selectedEvents.forEach((currentEvent) => {
+      if (event.join(";") == currentEvent.join(";")){
+        delete this.selectedEvents[i];
+        return;
+      }
+      i += 1;
+    });*/
+    this.allMyEvents.forEach((value: string[], key: string, map: Map<string, string[]>) => {
+      console.log(key);
+      if (key == this.formattedDate){
+        let i: number = 0;
+        this.allMyEvents.get(key)?.forEach((strObj) => {
+          if (strObj == eventStr){
+            delete this.allMyEvents.get(key)![i]
+            return;
+          }
+          i += 1;
+        });
+      }
+    });
+    this.tabSelection('Your Events');
+  }
+
   // Method to increase font size
   zoomIn() {
     this.zoomFactor += 0.1; // Increase zoom factor by 0.1

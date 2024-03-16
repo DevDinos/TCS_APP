@@ -31,13 +31,6 @@
     align-items: center;
   }
   
-//   .container {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     align-items: center;
-//   }
-  
   .container ion-button {
     margin: 10px;
     height: 80px !important;
@@ -57,11 +50,141 @@
     font-size: var(--h3-font-size);
   }
 
-  #helpline {
-    margin-left: 157px;
-    margin-top: 15px;
-  }
-
   #backButton {
     margin-top: 15px;
   }
+
+  div {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#cancelButton {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+.zoomButton {
+    --border-style: solid;
+    --border-width: 2px;
+    // --border-color: #fd800b;
+    // --background: #febd79;
+    // --background-activated: #e49f55;
+    --border-color: #d9443e;
+    --background: #ff6b65;
+    --background-activated: #c73934;
+} 
+
+.zoomIcon {
+    // color: black;
+    color:white;
+}
+
+ion-label {
+    font-size: var(--h3-font-size);
+}
+
+#backButton {
+    margin-top: 15px;
+}
+
+// started from forum page css
+.likeButton {
+  margin-right: 12px;
+  margin-left: 12px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  --background: #febd79;
+  // --background-activated: #fa8072;
+}
+//change likeButton when clicked using isClicked boolean
+.likeButton.clicked {
+  --background: #ff6b65;
+}
+
+
+.deleteButton {
+  --background: rgb(211, 211, 211) !important;
+  // color: white !important;
+  --border-width: 0px !important;
+}
+
+.cardButton {
+  // --background: #ff6b65;
+  --background: #febd79;
+  --border-style: solid;
+  --border-width: 2px;
+  --border-color: #fd800b;
+  color: black;
+  --background-activated: #e49f55;
+}
+
+#newPostButton {
+  width: 380px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  --background: #febd79;
+  --border-style: solid;
+  --border-width: 2px;
+  --border-color: #fd800b;
+  color: black;
+  --background-activated: #e49f55;
+}
+
+ion-textarea {
+  // try to make buttons not disappear when post gets too big
+  --max-length: 100px;
+}
+
+.clicked-likeButton {
+  // red
+  // --background: #E62F54 !important; /* Use !important to override Ionic's default styles */
+  // --background: #904b48;
+  --background: #c4fa94;
+  --border-color: #87b361;
+  // color: white !important;
+}
+
+.submittedToast {
+  --text-align: center;
+}
+
+.postTitle {
+  font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important;
+  text-transform: none; /* Reset the text transformation to normal case */
+  text-align: left; /* Center-align the title */
+}
+
+.postContent {
+  font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
+}
+
+.icebreakerHeading{
+  padding: 0px 16px;
+}
+
+.food-icons-grid{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.food-grid-item{
+  flex: 1;
+  font-size: 100px;
+  color: var(--ion-color-primary-tint)
+}
+
+.articleTitle{
+  font-size: calc(24px * var(--zoom-factor)); 
+  color: var(--ion-color-dark-shade);
+}
+
+ion-card{
+  border: 2px solid var(--ion-color-primary);
+  border-radius: 10px;
+}

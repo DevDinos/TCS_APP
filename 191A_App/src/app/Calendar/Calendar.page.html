@@ -32,6 +32,14 @@
           </ion-label>
           <div class="underline" *ngIf="selectedTab == 'Events'"></div>
         </button>
+
+
+        <button class="tab" (click)="tabSelection('Create Event')">
+          <ion-label>
+            Create Event
+          </ion-label>
+          <div class="underline" *ngIf="selectedTab == 'Create Event'"></div>
+        </button>
       </div>
     </div>
     <!--Starting the Calendar Here:-->
@@ -44,7 +52,7 @@
   </div>
 
 
-  <div class="calendarEvents">
+  <div class="calendarEvents" *ngIf="selectedTab != 'Create Event'">
     <!--<ion-card *ngFor="let event of selectedEvents">
       <ion-card-header>
         <ion-card-subtitle><b>Event</b></ion-card-subtitle>
@@ -65,11 +73,27 @@
         <b>Description:</b><br> {{event[1]}}
         <br>
         <b>Location:</b><br> {{event[2]}}</p>
-        <ion-button (click)="addEvent(event)">+ Add Event</ion-button>
+        <ion-button (click)="addEvent(event)" *ngIf="selectedTab == 'Events'">+ Add Event</ion-button>
+        <ion-button (click)="removeEvent(event)" *ngIf="selectedTab == 'Your Events'">- Remove Event</ion-button>
       </div>
     </div>
 
   </div>
+
+  <div class ="eventCreation" *ngIf="selectedTab == 'Create Event'">
+    <ion-item>
+      <ion-input label = "EVENT TITLE: " placeholder = "Enter Text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label = "EVENT TIME:" placeholder = "Enter Time"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea label="EVENT DESCRIPTION: " placeholder="Type Event Description Here"></ion-textarea>
+    </ion-item>
+  </div>
+
 
   <!--zoom buttons-->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
