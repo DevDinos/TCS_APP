@@ -9,10 +9,10 @@
 <ion-content [fullscreen]="true">
 
   <ion-button *ngIf="pageIndex != 0" (click)="backward()">Back</ion-button>
-  <p *ngIf="pageIndex == 0">page0 <br><br> Welcome to Sunrise Connections!</p>
-  <ion-button *ngIf="pageIndex == 0" (click)="forward()">Enter</ion-button>
-
-  <p *ngIf="pageIndex == 1">page 1 <br><br> Please select discussion topics you would like us to recommend:</p>
+  <h1 *ngIf="pageIndex == 0">Welcome to Sunrise Connections!</h1>
+  <h2 *ngIf="pageIndex == 0">Let's get to know your interests</h2>
+  <ion-button *ngIf="pageIndex == 0" (click)="forward()">Continue</ion-button>
+  <h1 *ngIf="pageIndex == 1">Please select discussion topics you would like us to recommend you:</h1>
   <ion-list *ngIf="pageIndex == 1">
     <ion-checkbox>
       <ion-label>
@@ -33,7 +33,7 @@
     </ion-checkbox>
   </ion-list>
 
-  <p *ngIf="pageIndex == 2">page 2 <br><br> Lastly, please select a font size:</p>
+  <!-- <p *ngIf="pageIndex == 2">page 2 <br><br> Lastly, please select a font size:</p>
   <p *ngIf="pageIndex == 2">Current Font Size:</p>
   <div *ngIf="pageIndex == 2">
     <ion-button>
@@ -43,13 +43,16 @@
     <ion-button>
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-button>
-  </div>
+  </div> -->
 
-  <p *ngIf="pageIndex == 3">page 3 <br><br> All set, you can now enjoy the app!</p>
+  <h2 *ngIf="pageIndex == 2">All set, you can now enjoy the app!</h2>
 
 
-  <ion-button *ngIf="(pageIndex != 0) && (pageIndex != 3)" (click)="forward()">Submit</ion-button>
-  <ion-button *ngIf="pageIndex != 3"(click)="skipSetup()">Skip</ion-button>
+  <ion-button *ngIf="(pageIndex != 0) && (pageIndex != 2)" (click)="forward()">Submit</ion-button>
+  <ion-button *ngIf="pageIndex != 2" (click)="presentAlert()">Skip</ion-button>
 
-  <ion-button *ngIf="pageIndex == 3" (click)="navigateTo('HomePage')">Finish</ion-button>
+  <ion-button *ngIf="pageIndex == 2" (click)="navigateTo('HomePage')">Finish</ion-button>
+  <h3 *ngIf="pageIndex == 0"> page 1 of 3</h3>
+  <h3 *ngIf="pageIndex == 1">page 2 of 3</h3>
+  <h3 *ngIf="pageIndex == 2">page 3 of 3</h3>
 </ion-content>
