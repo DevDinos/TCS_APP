@@ -74,7 +74,7 @@
         <br>
         <b>Location:</b><br> {{event[2]}}</p>
         <ion-button (click)="addEvent(event)" *ngIf="selectedTab == 'Events'">+ Add Event</ion-button>
-        <ion-button (click)="addEvent(event)" *ngIf="selectedTab == 'Your Events'">- Remove Event</ion-button>
+        <ion-button (click)="removeEvent(event)" *ngIf="selectedTab == 'Your Events'">- Remove Event</ion-button>
       </div>
     </div>
 

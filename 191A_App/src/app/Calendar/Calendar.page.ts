@@ -126,8 +126,7 @@ export class CalendarPage {
         let i: number = 0;
         this.allMyEvents.get(key)?.forEach((strObj) => {
           if (strObj == eventStr){
-            let temp: any = delete this.allMyEvents.get(key)![i]
-            this.allMyEvents.set(key, temp);
+            delete this.allMyEvents.get(key)![i]
             return;
           }
           i += 1;
