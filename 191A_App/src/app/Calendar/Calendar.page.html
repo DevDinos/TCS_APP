@@ -82,19 +82,23 @@
 
   <div class ="eventCreation" *ngIf="selectedTab == 'Create Event'">
     <ion-item>
-      <ion-input label = "EVENT TITLE: " placeholder = "Enter Text"></ion-input>
+      <ion-input label = "EVENT TITLE: " placeholder = "Enter Text" [(ngModel)]="eventTitle"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label = "EVENT TIME:" placeholder = "Enter Time"></ion-input>
+      <ion-input label = "EVENT TIME:" placeholder = "Enter Time" [(ngModel)]="eventTime"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-textarea label="EVENT DESCRIPTION: " placeholder="Type Event Description Here"></ion-textarea>
+      <ion-textarea label="EVENT DESCRIPTION: " placeholder="Type Event Description Here" [(ngModel)]="eventDescription"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label = "EVENT LOCATION:" placeholder = "Enter Time" [(ngModel)]="eventLocation"></ion-input>
     </ion-item>
 
     <ion-item class="button-container">
-      <ion-button expand="full">Make New Event</ion-button>
+      <ion-button expand="full" (click) = "makeNewEvent()">Make New Event</ion-button>
     </ion-item>
 
   </div>

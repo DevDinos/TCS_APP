@@ -26,6 +26,11 @@ export class CalendarPage {
 
   zoomFactor = 1;
   
+  eventTitle: string = '';
+  eventTime: string ='';
+  eventDescription: string = '';
+  eventLocation: string = '';
+
   constructor(private ns: NavigationService, private tabsPage: TabsPage) { 
     this.allEvents.set("Fri Jan 12 2024", ["12:00pm;Party at Eliza's House; Sunrise St, Sunset Beach, CA, USA", 
                                           "3:00pm;Book club meeting at Rick's place.; Coral St, Sunset Beach, CA, USA",
@@ -146,6 +151,18 @@ export class CalendarPage {
   zoomOut() {
     this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
     document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
+
+  //Creates and add events
+  makeNewEvent(){
+    if(this.allEvents.has(this.formattedDate)){
+      this.allEvents.set(this.formattedDate, [this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation]);
+    }
+    else{
+      this.allEvents.get(this.formattedDate)?.push(this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation)
+    }
+
+    this.addEvent([this.eventTime+"", this.eventTitle+": "+this.eventDescription, this.eventLocation])
   }
 }
 
