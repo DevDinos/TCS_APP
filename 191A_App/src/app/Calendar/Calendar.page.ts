@@ -148,7 +148,8 @@ export class CalendarPage {
     let tempEventStr: string = this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation;
     let tempEventArray: string[] = tempEventStr.split(";");
     if(!this.allEvents.has(formattedDate)){
-      this.allEvents.set(formattedDate, tempEventArray);
+      //This was creating problems, changed from tempEventArray to tempEventStr
+      this.allEvents.set(formattedDate, [tempEventStr]);
     }
     else{
       this.allEvents.get(formattedDate)?.push(tempEventStr)
