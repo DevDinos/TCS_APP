@@ -53,6 +53,7 @@ export class CalendarPage {
     this.formattedDate = (new Date(Date.parse(this.selectedDate))).toDateString();
     console.log("Selected Date (Parsed):", this.formattedDate);
     this.selectedEvents = [];
+    console.log(this.allEvents.has(this.formattedDate));
     if (this.allEvents.has(this.formattedDate)){
       //this.selectedEvents = this.allEvents.get(this.formattedDate)!;
       //console.log("Found!");
@@ -155,7 +156,7 @@ export class CalendarPage {
 
   //Creates and add events
   makeNewEvent(){
-    if(this.allEvents.has(this.formattedDate)){
+    if(!this.allEvents.has(this.formattedDate)){
       this.allEvents.set(this.formattedDate, [this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation]);
     }
     else{
@@ -163,6 +164,8 @@ export class CalendarPage {
     }
 
     this.addEvent([this.eventTime+"", this.eventTitle+": "+this.eventDescription, this.eventLocation])
+
+    console.log(this.allEvents.get(this.formattedDate));
   }
 }
 
