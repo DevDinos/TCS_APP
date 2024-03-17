@@ -39,3 +39,38 @@ ion-label {
 ion-fab {
     
 }
+
+ion-list {
+    text-align: center;
+}
+
+ion-checkbox {
+}
+
+.quizIcon {
+    font-size: 200px;
+    color: black;
+    border-radius: 30px;
+}
+
+#fitnessIcon {
+    background: rgb(85, 152, 224);
+}
+
+#healthIcon {
+    background: rgb(227, 62, 87);
+}
+
+#foodIcon {
+    background: rgb(244, 210, 61);
+}
+
+#musicIcon {
+    // background: rgb(162, 78, 208);
+    background: rgb(78, 208, 91);
+}
+
+// // background color
+// ion-content {
+//     --background: rgb(251, 240, 211);
+// }
