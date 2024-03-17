@@ -145,14 +145,16 @@ export class CalendarPage {
     console.log("Making Event");
     let formattedDate: string = this.getDateFromCal();
     this.refreshSelectedEvents(this.selectedTab, formattedDate);
+    let tempEventStr: string = this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation;
+    let tempEventArray: string[] = tempEventStr.split(";");
     if(!this.allEvents.has(formattedDate)){
-      this.allEvents.set(formattedDate, [this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation]);
+      this.allEvents.set(formattedDate, tempEventArray);
     }
     else{
-      this.allEvents.get(formattedDate)?.push(this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation)
+      this.allEvents.get(formattedDate)?.push(tempEventStr)
     }
 
-    this.addEvent([this.eventTime+"", this.eventTitle+": "+this.eventDescription, this.eventLocation])
+    this.addEvent(tempEventArray)
 
     console.log(this.allEvents.get(formattedDate));
 
