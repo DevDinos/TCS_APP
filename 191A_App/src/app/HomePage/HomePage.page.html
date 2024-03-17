@@ -1,5 +1,11 @@
 <ion-header>
   <ion-toolbar [style]="'--background: var(--ion-color-primary)'">
+    <ion-button slot="start" fill="solid" id="logOutButton" (click)="navigateTo('Welcome')">
+      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+      <ion-label>
+        Log out
+      </ion-label>
+    </ion-button>
     <ion-title>
       Home
     </ion-title>
