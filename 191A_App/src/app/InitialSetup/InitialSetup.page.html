@@ -8,7 +8,11 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-button *ngIf="pageIndex != 0" (click)="backward()">Back</ion-button>
+  <ion-button *ngIf="pageIndex != 0" (click)="backward()">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    Back
+  </ion-button>
+
   <h1 *ngIf="pageIndex == 0">Welcome to Sunrise Connections!</h1>
   <h2 *ngIf="pageIndex == 0">Let's get to know your interests</h2>
   <ion-button *ngIf="pageIndex == 0" (click)="forward()">Continue</ion-button>
@@ -45,7 +49,7 @@
     </ion-button>
   </div> -->
 
-  <h2 *ngIf="pageIndex == 2">All set, you can now enjoy the app!</h2>
+  <h1 *ngIf="pageIndex == 2">All set, you can now enjoy the app!</h1>
 
 
   <ion-button *ngIf="(pageIndex != 0) && (pageIndex != 2)" (click)="forward()">Submit</ion-button>
@@ -55,4 +59,15 @@
   <h3 *ngIf="pageIndex == 0"> page 1 of 3</h3>
   <h3 *ngIf="pageIndex == 1">page 2 of 3</h3>
   <h3 *ngIf="pageIndex == 2">page 3 of 3</h3>
+
+  <!--zoom buttons-->
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="zoomIn()" class="zoomButton">
+      <ion-icon name="add" class="zoomIcon"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="zoomOut()" class="zoomButton">
+      <ion-icon name="remove-outline" class="zoomIcon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

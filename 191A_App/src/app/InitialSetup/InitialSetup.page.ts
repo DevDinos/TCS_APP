@@ -12,7 +12,7 @@ import { AlertController } from '@ionic/angular';
 export class InitialSetupPage{
   pageIndex: number = 0;
   // alertController: any;
-
+  zoomFactor = 1;
   constructor(private ts: TabsPage, private ns: NavigationService, private alertController:AlertController){
   }
 
@@ -54,5 +54,17 @@ export class InitialSetupPage{
     });
     // Call the present method to display the alert
     await alert.present();
+  }
+
+  // Method to increase font size
+  zoomIn() {
+    this.zoomFactor += 0.1; // Increase zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
+  }
+
+  // Method to decrease font size
+  zoomOut() {
+    this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
+    document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
   }
 }

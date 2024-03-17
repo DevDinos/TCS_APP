@@ -1,18 +1,24 @@
 h1 {
     text-align: center;
     margin-top: 45px;
+    margin-left: 15px;
+    margin-right: 15px;
     font-size: calc(var(--h1-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
 }
 
 h2 {
     text-align: center;
     margin-top: 45px;
+    margin-left: 15px;
+    margin-right: 15px;
     font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
 }
 
 h3 {
     text-align: center;
     margin-top: 45px;
+    margin-left: 15px;
+    margin-right: 15px;
     font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
 }
 
@@ -20,11 +26,16 @@ ion-button {
     display: flex;
     margin: auto;
     width: 200px;
-    font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
+    font-size: var(--h3-font-size) !important;
+    margin-top: 20px;
 }
 
 ion-label {
     text-align: center;
     margin-top: 45px;
     font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
+}
+
+ion-fab {
+    
 }
