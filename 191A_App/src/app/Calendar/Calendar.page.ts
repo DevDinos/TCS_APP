@@ -104,9 +104,17 @@ export class CalendarPage {
       this.allMyEvents.set(formattedDate, [eventStr]);
     }
     else{
-      let tempEvents: string[] = this.allMyEvents.get(formattedDate)||[];
-      tempEvents.push(eventStr);
-      this.allMyEvents.set(formattedDate, tempEvents);
+      let onEvent: string[] = this.allMyEvents.get(formattedDate)!;
+      console.log(onEvent);
+      if (onEvent!.length != 0){
+        for (let i = 0; i < onEvent!.length; i++){
+          if (onEvent![i] == eventStr){
+            return;
+          }
+        }
+      }
+      onEvent.push(eventStr);
+      this.allMyEvents.set(formattedDate, onEvent);
     }
     console.log(this.allMyEvents);
   }
