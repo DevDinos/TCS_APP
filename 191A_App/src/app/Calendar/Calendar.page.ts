@@ -16,13 +16,11 @@ export class CalendarPage {
 
   selectedDate: string = '';
 
-  formattedDate: string = '';
-
   selectedEvents: any[] = [];
 
   myDate: String = new Date().toISOString();
 
-  selectedTab: String = "Events";
+  selectedTab: string = "Events";
 
   zoomFactor = 1;
   
@@ -47,99 +45,109 @@ export class CalendarPage {
     this.ns.navigateTo(destination);
   }
 
-  onDateSelectionChange(event: any) {
-    //console.log('Selected Date:', this.selectedDate);
-    console.log("Selected Date:", new Date(Date.parse(this.selectedDate)))
-    this.formattedDate = (new Date(Date.parse(this.selectedDate))).toDateString();
-    console.log("Selected Date (Parsed):", this.formattedDate);
-    this.selectedEvents = [];
-    console.log(this.allEvents.has(this.formattedDate));
-    if (this.allEvents.has(this.formattedDate)){
-      //this.selectedEvents = this.allEvents.get(this.formattedDate)!;
-      //console.log("Found!");
-      let onEvent = this.allEvents.get(this.formattedDate)
-      for (let i = 0; i < onEvent!.length; i++){
-        let temp = onEvent![i].split(";");
-        this.selectedEvents.push(temp);
-      }
+  getDateFromCal(){
+    console.log("Selected Date:", new Date(Date.parse(this.selectedDate)));
+    let formattedDate: string = (new Date(Date.parse(this.selectedDate))).toDateString();
+    console.log("Selected Date (Parsed):", formattedDate);
+    return formattedDate;
+  }
 
+  refreshSelectedEvents(eventsType: string, formattedDate: string){
+    console.log("Refresh Selected Events");
+    console.log("allMyEvents: " + this.allMyEvents.get(formattedDate));
+    this.selectedEvents = [];
+    if (eventsType == "Events"){
+      console.log(this.allEvents.has(formattedDate));
+      if (this.allEvents.has(formattedDate)){
+        let onEvent = this.allEvents.get(formattedDate);
+        console.log(onEvent);
+        for (let i = 0; i < onEvent!.length; i++){
+          let temp = onEvent![i].split(";");
+          this.selectedEvents.push(temp);
+        }
+      }
+    }
+    else if (eventsType == "Your Events"){
+      console.log(this.allMyEvents.has(formattedDate));
+      if (this.allMyEvents.has(formattedDate)){
+        let onEvent = this.allMyEvents.get(formattedDate);
+        console.log(onEvent);
+        if (onEvent!.length != 0){
+          for (let i = 0; i < onEvent!.length; i++){
+            let temp = onEvent![i].split(";");
+            this.selectedEvents.push(temp);
+          }
+        }
+      }
     }
   }
 
-  tabSelection(tabName: String){
-    console.log(tabName);
+  onTabSelectionChange(tabName: string){
+    console.log("Switching selectedTab to: " + tabName);
     this.selectedTab = tabName;
-    console.log(this.allMyEvents);
-    if (this.selectedTab == 'Events'){
-      this.onDateSelectionChange("None");
-    }
-    else {
-      /*this.selectedEvents = [];
-      let keys = this.allMyEvents.keys();
-      console.log(keys);
-      console.log("Else!!!");
-      keys.forEach((key) => {
-        console.log("Hello");
-        this.allMyEvents.get(key)?.forEach((strObj) => {
-          console.log("Hello Again");
-          let temp = strObj!.split(";");
-          this.selectedEvents.push(temp);
-        });
-      });*/
-      this.selectedEvents = [];
-      console.log("Else!!!");
-      this.allMyEvents.forEach((value: string[], key: string, map: Map<string, string[]>) => {
-        console.log(key);
-        this.allMyEvents.get(key)?.forEach((strObj) => {
-          console.log("Hello Again");
-          let temp = strObj!.split(";");
-          this.selectedEvents.push(temp);
-        });
-    });
-    }
+    let formattedDate: string = this.getDateFromCal();
+    this.refreshSelectedEvents(this.selectedTab, formattedDate);
+  }
+
+  onDateSelectionChange(event: any) {
+    console.log("Retrieving Date from Calendar");
+    let formattedDate: string = this.getDateFromCal();
+    this.refreshSelectedEvents(this.selectedTab, formattedDate);
   }
 
   addEvent(event: string[]){
-    let eventStr = event.join(";");
-    console.log(this.formattedDate);
-    console.log(event);
-    if (!this.allMyEvents.has(this.formattedDate)){
-      this.allMyEvents.set(this.formattedDate, [eventStr])
+    console.log("Adding Event");
+    let eventStr: string = event.join(";");
+    let formattedDate: string = this.getDateFromCal();
+    console.log(eventStr);
+    if (!this.allMyEvents.has(formattedDate)){
+      this.allMyEvents.set(formattedDate, [eventStr]);
     }
     else{
-      let tempEvents: string[] = this.allMyEvents.get(this.formattedDate)||[];
+      let tempEvents: string[] = this.allMyEvents.get(formattedDate)||[];
       tempEvents.push(eventStr);
-      this.allMyEvents.set(this.formattedDate, tempEvents);
+      this.allMyEvents.set(formattedDate, tempEvents);
     }
-    console.log("Adding");
     console.log(this.allMyEvents);
   }
 
   removeEvent(event: string[]){
-    let eventStr = event.join(";");
-    console.log(this.formattedDate);
-    console.log(event);
-    /*this.selectedEvents.forEach((currentEvent) => {
-      if (event.join(";") == currentEvent.join(";")){
-        delete this.selectedEvents[i];
-        return;
+    console.log("Removing Event");
+    let eventStr: string = event.join(";");
+    let formattedDate: string = this.getDateFromCal();
+    console.log(eventStr);
+    if (this.allMyEvents.has(formattedDate)){
+      console.log("allMyEvents has formattedDate!");
+      console.log(this.allMyEvents.get(formattedDate));
+      let onEvent = this.allMyEvents.get(formattedDate);
+      for (let i = 0; i < onEvent!.length; i++){
+        console.log("Looking for Event!");
+        if (onEvent![i] == eventStr){
+          console.log("Actually Removing - Splicing!");
+          onEvent!.splice(i, 1);
+          let formattedDate: string = this.getDateFromCal();
+          this.refreshSelectedEvents(this.selectedTab, formattedDate);
+          return;
+        }
       }
-      i += 1;
-    });*/
-    this.allMyEvents.forEach((value: string[], key: string, map: Map<string, string[]>) => {
-      console.log(key);
-      if (key == this.formattedDate){
-        let i: number = 0;
-        this.allMyEvents.get(key)?.forEach((strObj) => {
-          if (strObj == eventStr){
-            delete this.allMyEvents.get(key)![i]
-            return;
-          }
-          i += 1;
-        });
-      }
-    });
-    this.tabSelection('Your Events');
+    }
+  }
+
+  makeNewEvent(){
+    console.log("Making Event");
+    let formattedDate: string = this.getDateFromCal();
+    this.refreshSelectedEvents(this.selectedTab, formattedDate);
+    if(!this.allEvents.has(formattedDate)){
+      this.allEvents.set(formattedDate, [this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation]);
+    }
+    else{
+      this.allEvents.get(formattedDate)?.push(this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation)
+    }
+
+    this.addEvent([this.eventTime+"", this.eventTitle+": "+this.eventDescription, this.eventLocation])
+
+    console.log(this.allEvents.get(formattedDate));
+
   }
 
   // Method to increase font size
@@ -152,20 +160,6 @@ export class CalendarPage {
   zoomOut() {
     this.zoomFactor -= 0.1; // Decrease zoom factor by 0.1
     document.documentElement.style.setProperty('--zoom-factor', this.zoomFactor.toString()); // Update zoom factor in CSS
-  }
-
-  //Creates and add events
-  makeNewEvent(){
-    if(!this.allEvents.has(this.formattedDate)){
-      this.allEvents.set(this.formattedDate, [this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation]);
-    }
-    else{
-      this.allEvents.get(this.formattedDate)?.push(this.eventTime+"; "+this.eventTitle+": "+this.eventDescription+";"+this.eventLocation)
-    }
-
-    this.addEvent([this.eventTime+"", this.eventTitle+": "+this.eventDescription, this.eventLocation])
-
-    console.log(this.allEvents.get(this.formattedDate));
   }
 }
 

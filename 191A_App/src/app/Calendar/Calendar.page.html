@@ -18,7 +18,7 @@
   <div class="calendarInterfaceGrid">
     <div class="calendarTabs">
       <div class="calendarTabsGrid">
-        <button class="tab" (click)="tabSelection('Your Events')">
+        <button class="tab" (click)="onTabSelectionChange('Your Events')">
           <ion-label>
             Your Events
           </ion-label>
@@ -26,7 +26,7 @@
         </button>
       
 
-        <button class="tab" (click)="tabSelection('Events')">
+        <button class="tab" (click)="onTabSelectionChange('Events')">
           <ion-label>
             Events
           </ion-label>
@@ -34,7 +34,7 @@
         </button>
 
 
-        <button class="tab" (click)="tabSelection('Create Event')">
+        <button class="tab" (click)="onTabSelectionChange('Create Event')">
           <ion-label>
             Create Event
           </ion-label>
@@ -94,7 +94,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-input label = "EVENT LOCATION:" placeholder = "Enter Time" [(ngModel)]="eventLocation"></ion-input>
+      <ion-input label = "EVENT LOCATION:" placeholder = "Enter Location" [(ngModel)]="eventLocation"></ion-input>
     </ion-item>
 
     <ion-item class="button-container">
