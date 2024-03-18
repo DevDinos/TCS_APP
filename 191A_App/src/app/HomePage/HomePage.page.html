@@ -23,15 +23,18 @@
         <ion-card-subtitle style="font-size: 28px; text-align: left; text-transform: none;">Favorite Foods</ion-card-subtitle>
       </div>
     </ion-card-header>
-    <div class="food-icons-grid">
+    <ion-card-content>
+      <div class="food-icons-grid">
       <ion-icon class="food-grid-item" name="pizza-outline"></ion-icon>
       <ion-icon class="food-grid-item" name="fast-food-outline"></ion-icon>
       <ion-icon class="food-grid-item" name="ice-cream-outline"></ion-icon>
     </div> 
   
-    <ion-button class="cardButton likeButton" fill="solid" [routerLink]="['/responses']">
-      Responses</ion-button>
+    <!-- <ion-button class="cardButton likeButton" fill="solid" [routerLink]="['/responses']">
+      Responses</ion-button> -->
     <ion-button class="cardButton responseButton" fill="solid" [routerLink]="['/responses']">Share Thoughts<ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+    </ion-card-content>
+    
   </ion-card>
 
   <!-- Additional Content -->
@@ -44,6 +47,18 @@
       <h2 class="articleTitle">Dating on a Budget</h2>
       <h3>Age is just a number when it comes to love, and seniors deserve to find happiness and companionship just as much as anyone else...</h3>
       <ion-button class="cardButton" fill="outline" routerLink="/article">Read More</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!--Check-in button-->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle style="font-size: 28px; text-align: left; text-transform: none;">Revisit</ion-card-subtitle>
+      <ion-card-title class="postTitle">Daily Check-in</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h3>To revisit the daily check-in and change your answer, click below:</h3>
+      <ion-button class="cardButton" fill="outline" (click)="checkinClick()">Daily Check-in</ion-button>
     </ion-card-content>
   </ion-card>
 
