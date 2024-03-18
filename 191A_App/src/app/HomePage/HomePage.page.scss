@@ -51,10 +51,12 @@
   }
 
   #logOutButton {
-    --background: var(--ion-color-secondary-tint) !important;
+    --background: #febd79;
+    --border-style: solid;
     --border-width: 2px;
-    --border-color:#fd800b;
+    --border-color: #fd800b;
     --color: black;
+    --background-activated: #e49f55;
   }
 
   div {

@@ -4,7 +4,7 @@
     display: grid;
     grid-template-rows: 20% 30% auto;
     justify-items: center;
-    padding: 0px 10px;
+    padding: 0px 10px 30px 10px;
 }
 
 .calendarTabs {
@@ -23,45 +23,27 @@
 }
 
 .calendarEvents{
-    margin: 0% 0% 0% 2%;
-    position: absolute;
-    top: 70%;
-    left: 8%;
-    //transform: translate(-50%, 33%);
-    width: 80%;
-    height: 30em; /* Adjust as needed */
-    border: 0.2em solid var(--ion-color-dark);
-    padding: 0% 0% 20% 0%;
+    flex: 1; /* Grow to fill remaining space */
     overflow-y: auto;
-
+    border: 0.2em solid var(--ion-color-secondary);
+    border-radius: 10px;
+    margin-top: 2em; /* Adjust margin as needed */
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 30em; /* Adjust as needed */
 }
 
-
-/*.eventCreation{
-    //margin: 0% 0% 5% 5%;
-    //position: absolute;
-    width:90%;
-    flex-direction: column;
-    align-items: center;
-}
-
-  
-  .button-container {
-    margin-top: 10px;
-    align-self: center;
-  }*/
 .eventCreation {
-    //width: 90%;
-    //margin: 0% 0% 5% 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px;
 }
 
 
 .button-container {
     margin-top: 10px;
-    //width: 100%; 
 }
 
 
@@ -88,23 +70,22 @@
 }
 
 .eventBox{
-    /*background-color: black;*/
     height: auto;
     width: 80%;
     border: 0.3em solid rgb(255, 107, 101);
-    border-radius: 5%;
-    margin: 0% 0% 10% 10%;
-    padding: 2% 2% 0% 2%;
-    box-shadow: 10px 10px rgb(175, 198, 206);
-    /*font-size: 0.5em;*/
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--ion-color-light);
 }
 
 .events{
-    position: absolute;
     height: auto;
-    width: 70%;
-    margin: 0% 0% 0% 18%;
-    /*border: 0.3em solid rgb(0, 0, 0);*/
+    width: 100%;
+    justify-items: center;
 }
 
 .buffer{
@@ -154,6 +135,5 @@ ion-label {
 }
 
 #backButton {
-    margin-top: 15px !important;
-    margin-bottom: 30px;
+    margin: 15px 5px;
 }
