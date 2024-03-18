@@ -8,7 +8,7 @@ h1 {
 
 h2 {
     text-align: center;
-    margin-top: 45px;
+    // margin-top: 20px;
     margin-left: 15px;
     margin-right: 15px;
     font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
@@ -16,7 +16,7 @@ h2 {
 
 h3 {
     text-align: center;
-    margin-top: 45px;
+    // margin-top: 45px;
     margin-left: 15px;
     margin-right: 15px;
     font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
@@ -25,7 +25,7 @@ h3 {
 ion-button {
     display: flex;
     margin: auto;
-    width: 200px;
+    width: 350px;
     font-size: var(--h3-font-size) !important;
     margin-top: 20px;
 }
@@ -40,15 +40,19 @@ ion-fab {
     
 }
 
-ion-list {
-    text-align: center;
+ion-checkbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
-
-ion-checkbox {
+ion-checkbox ion-label{
+    color: black;
 }
 
 .quizIcon {
-    font-size: 200px;
+    font-size: 20vh;
     color: black;
     border-radius: 30px;
 }
@@ -69,6 +73,41 @@ ion-checkbox {
     // background: rgb(162, 78, 208);
     background: rgb(78, 208, 91);
 }
+
+.background-image {
+    --background: url('../../assets/splashImages/sunset3.jpg') no-repeat center 45%;
+    background-size: auto;
+}
+
+.top {
+    margin-top: 15vh;
+}
+
+.topDiscussion{
+    margin-top: 5vh;
+}
+
+.bottom {
+    margin-top: 30vh;
+}
+
+.bottomDiscussion{
+    margin-top: 3vh;
+}
+
+ion-list {
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: 45vh;
+    padding: 10px;
+}
+
 
 // // background color
 // ion-content {

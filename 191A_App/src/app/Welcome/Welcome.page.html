@@ -1,20 +1,25 @@
-<ion-content [fullscreen]="true" class="welcome-page">
-  <div class="content">
-    <h1>Welcome to Sunrise Connections!</h1>
-    <h2>Are you new here?</h2>
-
-    <ion-button id="createAcc" (click)="navigateTo('AccountCreation')" class="action-button">
-      <ion-label>Create Account</ion-label>
-    </ion-button>
-
-      <h3>OR</h3>
-
-    <h2>Are you a returning member?</h2>
-    <ion-button id="login" (click)="navigateTo('Login')" class="action-button">
-      <ion-label>Log In</ion-label>
-    </ion-button>
-
-    <ion-icon class="sunrise-icon" name="partly-sunny-outline"></ion-icon>
+<ion-content [fullscreen]="true" class="welcome-page background-image">
+  <div>
+      <div class="top">
+        <h3>Welcome to</h3>
+        <h1>Sunrise Connections!</h1>
+      </div>
+      <div class="bottom">
+          <h2>Are you new here?</h2>
+  
+      <ion-button id="createAcc" (click)="navigateTo('AccountCreation')" class="action-button">
+        <ion-label>Create Account</ion-label>
+      </ion-button>
+  
+        <h3>OR</h3>
+  
+      <h2>Are you a returning member?</h2>
+      <ion-button id="login" (click)="navigateTo('Login')" class="action-button">
+        <ion-label>Log In</ion-label>
+      </ion-button>
+  
+      <!-- <ion-icon class="sunrise-icon" name="partly-sunny-outline"></ion-icon> -->
+      </div>
   </div>
 
   <!-- Zoom buttons -->

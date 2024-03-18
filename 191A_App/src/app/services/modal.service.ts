@@ -9,7 +9,7 @@ export class ModalService{
     static n = 0;
 
     constructor() {
-        console.log('ModalService constructor');
+        console.log('ModalService constructor', "modal has been shown: ", this.modalAlreadyShown);
         console.log(ModalService.n)
         if(ModalService.n > 1){
             this.modalAlreadyShown = true;

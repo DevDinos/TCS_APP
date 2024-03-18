@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="background-image">
 
   <ion-button id="backButton" (click)="navigateTo('Welcome')">
     <ion-icon name="arrow-back-outline"></ion-icon>
@@ -14,23 +14,21 @@
       Back
     </ion-label>
   </ion-button>
+  <div class="top">
+    <h3>Welcome to</h3>
+    <h1>Sunrise Connections!</h1>
+  </div>
+  <div class="bottom">
+   
+        <ion-input placeholder="Enter Username or Email"></ion-input>
 
-  <h1>Log in</h1>
-  <h2>Enter Information</h2>
-  <ion-list>
-    <ion-item>
-      <ion-input placeholder="Enter Username or Email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Enter Password"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <ion-button id="login" (click)="navigateTo('HomePage')">
-    <ion-label>
-      Login
-    </ion-label>
-  </ion-button>
+        <ion-input placeholder="Enter Password"></ion-input>
+    <ion-button id="login" (click)="navigateTo('HomePage')">
+      <ion-label>
+        Login
+      </ion-label>
+    </ion-button>
+  </div>
 
   <!--zoom buttons-->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">

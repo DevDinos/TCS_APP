@@ -10,7 +10,7 @@ ion-label {
 #login {
     display: flex;
     margin: auto;
-    width: 200px;
+    width: 350px;
 }
 
 ion-list {
@@ -26,4 +26,33 @@ h2 {
     font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.background-image {
+    --background: url('../../assets/splashImages/sunset3.jpg') no-repeat center 45%;
+    background-size: auto;
+}
+
+.top {
+    margin-top: 5vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.bottom {
+    margin-top: 35vh;
+}
+
+ion-input {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid white; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 40vh;
+    color: white;
 }

@@ -1,6 +1,8 @@
-.welcome-page{
+.welcome-page {
     background-color: var(--ion-color-dark);
+    /* height: 100vh; */
 }
+
 ion-title {
     font-size: calc(var(--title-font-size) * var(--zoom-factor)) !important;
 }
@@ -29,20 +31,33 @@ h3 {
 ion-button {
     display: flex;
     margin: auto;
-    width: 200px;
+    width: 350px;
 }
 
 ion-label {
     font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
 }
 
-.sunrise-icon{
+/* .sunrise-icon {
     font-size: 320px;
     color: var(--ion-color-secondary);
     display: block;
     margin: 20px auto;
+} */
+
+/* #createAcc {
+    width: 20em;
+} */
+
+.background-image {
+    --background: url('../../assets/splashImages/sunset3.jpg') no-repeat center 45%;
+    background-size: auto;
 }
 
-#createAcc{
-    width: 20em;
+.top {
+    margin-top: 15vh;
+}
+
+.bottom {
+    margin-top: 40vh;
 }

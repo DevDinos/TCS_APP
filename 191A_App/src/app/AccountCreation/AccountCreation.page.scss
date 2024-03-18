@@ -4,17 +4,32 @@ ion-label {
 
 #backButton {
     margin-top: 15px;
-    // margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 #submit {
     display: flex;
     margin: auto;
-    width: 200px;
+    width: 350px;
 }
 
 ion-list {
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 30px;
+    border-radius: 10px;
+    width: 45vh;
+    padding: 10px;
+}
+
+ion-input {
+    border: 1px solid black; 
+    border-radius: 5px;
+    margin-bottom: 10px; 
+    color: black;
 }
 
 h1, h2 {
@@ -28,4 +43,17 @@ h1 {
 h2 {
     font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important;
     margin-bottom: 30px;
+}
+
+.background-image {
+    --background: url('../../assets/splashImages/sunset3.jpg') no-repeat center 45%;
+    background-size: auto;
+}
+
+.top {
+    margin-top: 10vh;
+}
+
+.bottom {
+    margin-top: 5vh;
 }

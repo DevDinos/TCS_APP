@@ -6,51 +6,70 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="background-image">
 
   <ion-button *ngIf="pageIndex != 0" (click)="backward()">
     <ion-icon name="arrow-back-outline"></ion-icon>
     Back
   </ion-button>
+  <div class="top" *ngIf="pageIndex == 0">
+    <h1 *ngIf="pageIndex == 0">Welcome to Sunrise Connections!</h1>
+    <h2 *ngIf="pageIndex == 0">A Social App for 60+</h2>
+  </div>
+  <div class="bottom" *ngIf="pageIndex == 0">
+    <h1>Before entering the app, let's get to know your interests!</h1>
+    <ion-button *ngIf="pageIndex == 0" (click)="forward()">Continue</ion-button>
+    <ion-button (click)="presentAlert()">Skip</ion-button>
+  </div>
 
-  <h1 *ngIf="pageIndex == 0">Welcome to Sunrise Connections!</h1>
-  <h2 *ngIf="pageIndex == 0">Let's get to know your interests</h2>
-  <ion-button *ngIf="pageIndex == 0" (click)="forward()">Continue</ion-button>
-  <h1 *ngIf="pageIndex == 1">Please select discussion topics you would like us to recommend you:</h1>
-  <ion-list *ngIf="pageIndex == 1">
-    <ion-checkbox>
-      <ion-label>
-        Fitness
-      </ion-label>
-    </ion-checkbox>
-    <br><br>
-    <ion-icon class="quizIcon" id="fitnessIcon" name="bicycle"></ion-icon>
-    <br><br>
-    <ion-checkbox>      
-      <ion-label>
-        Health
-      </ion-label>
-    </ion-checkbox>
-    <br><br>
-    <ion-icon class="quizIcon" id="healthIcon" name="fitness"></ion-icon>
-    <br><br>
-    <ion-checkbox>
-      <ion-label>
-        Food
-      </ion-label>
-    </ion-checkbox>
-    <br><br>
-    <ion-icon class="quizIcon" id="foodIcon" name="pizza-outline"></ion-icon>
-    <br><br>
-    <ion-checkbox>
-      <ion-label>
-        Music
-      </ion-label>
-    </ion-checkbox>
-    <br><br>
-    <ion-icon class="quizIcon" id="musicIcon" name="musical-notes"></ion-icon>
-    <br><br>
-  </ion-list>
+  <div class="topDiscussion" *ngIf="pageIndex == 1">
+    <h1 *ngIf="pageIndex == 1">Please select discussion topics you would like us to recommend you:</h1>
+    <ion-button (click)="presentAlert()">Skip</ion-button>
+  </div>
+  <div class="bottomDiscussion" *ngIf="pageIndex == 1">
+    <ion-list *ngIf="pageIndex == 1">
+      <ion-checkbox>
+        <ion-label>
+          Fitness
+        </ion-label>
+      </ion-checkbox>
+      <br><br>
+      <ion-icon class="quizIcon" id="fitnessIcon" name="bicycle"></ion-icon>
+      <br><br>
+      <ion-checkbox>      
+        <ion-label>
+          Health
+        </ion-label>
+      </ion-checkbox>
+      <br><br>
+      <ion-icon class="quizIcon" id="healthIcon" name="fitness"></ion-icon>
+      <br><br>
+      <ion-checkbox>
+        <ion-label>
+          Food
+        </ion-label>
+      </ion-checkbox>
+      <br><br>
+      <ion-icon class="quizIcon" id="foodIcon" name="pizza-outline"></ion-icon>
+      <br><br>
+      <ion-checkbox>
+        <ion-label>
+          Music
+        </ion-label>
+      </ion-checkbox>
+      <br><br>
+      <ion-icon class="quizIcon" id="musicIcon" name="musical-notes"></ion-icon>
+      <br><br>
+    </ion-list>
+    <ion-button (click)="forward()">Submit</ion-button>
+  </div>
+
+  <div *ngIf="pageIndex == 2" class="top">
+    <h1 *ngIf="pageIndex == 2">All set, you can now enjoy the app!</h1>
+  </div>
+  <div *ngIf="pageIndex ==2" class="bottom">
+    <ion-button *ngIf="pageIndex == 2" (click)="navigateTo('HomePage')">Finish</ion-button>
+  </div>
 
   <!-- <p *ngIf="pageIndex == 2">page 2 <br><br> Lastly, please select a font size:</p>
   <p *ngIf="pageIndex == 2">Current Font Size:</p>
@@ -64,13 +83,6 @@
     </ion-button>
   </div> -->
 
-  <h1 *ngIf="pageIndex == 2">All set, you can now enjoy the app!</h1>
-
-
-  <ion-button *ngIf="(pageIndex != 0) && (pageIndex != 2)" (click)="forward()">Submit</ion-button>
-  <ion-button *ngIf="pageIndex != 2" (click)="presentAlert()">Skip</ion-button>
-
-  <ion-button *ngIf="pageIndex == 2" (click)="navigateTo('HomePage')">Finish</ion-button>
   <h3 *ngIf="pageIndex == 0"> page 1 of 3</h3>
   <h3 *ngIf="pageIndex == 1">page 2 of 3</h3>
   <h3 *ngIf="pageIndex == 2">page 3 of 3</h3>

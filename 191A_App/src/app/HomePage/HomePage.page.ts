@@ -44,7 +44,7 @@ export class HomePagePage {
   async ionViewDidEnter() {
     console.log('Starting to create modal, checkin button: ', this.checkinButton);
     if(this.checkinButton){
-      console.log('checkin click')
+      console.log('checkin click', "modal shown: ", this.modalService.modalAlreadyShown)
       const modal = await this.modalCtrl.create({
         component: CheckInPage,   
         cssClass: 'checkin-size',
@@ -68,9 +68,10 @@ export class HomePagePage {
   }
 
   checkinClick(){
-    console.log(this.modalService.modalAlreadyShown)
+    console.log("modal shown: ", this.modalService.modalAlreadyShown)
     this.checkinButton = true;
     this.ionViewDidEnter();
+    this.checkinButton = false;
   }
 
   // Method to increase font size
