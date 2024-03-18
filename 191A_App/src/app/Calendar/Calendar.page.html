@@ -19,25 +19,25 @@
     <div class="calendarTabs">
       <div class="calendarTabsGrid">
         <button class="tab" (click)="onTabSelectionChange('Your Events')">
-          <label id="yourTab">
+          <ion-label id="yourTab">
             Your Events
-          </label>
+          </ion-label>
           <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
         </button>
       
 
         <button class="tab" (click)="onTabSelectionChange('Events')">
-          <label id="eventTab">
+          <ion-label id="eventTab">
             Events
-          </label>
+          </ion-label>
           <div class="underline" *ngIf="selectedTab == 'Events'"></div>
         </button>
 
 
         <button class="tab" (click)="onTabSelectionChange('Create Event')">
-          <label id="createTab">
+          <ion-label id="createTab">
             Create Event
-          </label>
+          </ion-label>
           <div class="underline" *ngIf="selectedTab == 'Create Event'"></div>
         </button>
       </div>
