@@ -168,6 +168,10 @@ ion-textarea {
   font-size: calc(var(--h2-font-size) * var(--zoom-factor)) !important; // Calculate font size based on zoom factor
 }
 
+h3 {
+  font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
+}
+
 .icebreakerHeading{
   padding: 0px 16px;
 }
