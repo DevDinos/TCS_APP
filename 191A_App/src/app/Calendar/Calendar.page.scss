@@ -135,7 +135,11 @@ ion-label {
 }
 
 #backButton {
-    margin: 15px 5px;
+    margin-top: 15px;
+}
+
+#backLabel {
+    font-size: var(--h3-font-size) !important;
 }
 
 #yourTab {

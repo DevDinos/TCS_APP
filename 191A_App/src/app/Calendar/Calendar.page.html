@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-button id="backButton" (click)="navigateTo('HomePage')">
     <ion-icon name="arrow-back-outline"></ion-icon>
-    <ion-label>
+    <ion-label id="backLabel">
       Back
     </ion-label>
   </ion-button>
@@ -19,25 +19,25 @@
     <div class="calendarTabs">
       <div class="calendarTabsGrid">
         <button class="tab" (click)="onTabSelectionChange('Your Events')">
-          <ion-label id="yourTab">
+          <label id="yourTab">
             Your Events
-          </ion-label>
+          </label>
           <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
         </button>
       
 
         <button class="tab" (click)="onTabSelectionChange('Events')">
-          <ion-label id="eventTab">
+          <label id="eventTab">
             Events
-          </ion-label>
+          </label>
           <div class="underline" *ngIf="selectedTab == 'Events'"></div>
         </button>
 
 
         <button class="tab" (click)="onTabSelectionChange('Create Event')">
-          <ion-label id="createTab">
+          <label id="createTab">
             Create Event
-          </ion-label>
+          </label>
           <div class="underline" *ngIf="selectedTab == 'Create Event'"></div>
         </button>
       </div>
