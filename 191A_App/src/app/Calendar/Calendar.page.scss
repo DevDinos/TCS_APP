@@ -131,9 +131,21 @@ ion-title {
 }
 
 ion-label {
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
 }
 
 #backButton {
     margin: 15px 5px;
+}
+
+#yourTab {
+    margin-left: 15px;
+}
+
+#createTab {
+    margin-right: 15px;
+}
+
+.calendar {
+    margin-top: 15px;
 }

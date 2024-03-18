@@ -19,7 +19,7 @@
     <div class="calendarTabs">
       <div class="calendarTabsGrid">
         <button class="tab" (click)="onTabSelectionChange('Your Events')">
-          <ion-label>
+          <ion-label id="yourTab">
             Your Events
           </ion-label>
           <div class="underline" *ngIf="selectedTab == 'Your Events'"></div>
@@ -27,7 +27,7 @@
       
 
         <button class="tab" (click)="onTabSelectionChange('Events')">
-          <ion-label>
+          <ion-label id="eventTab">
             Events
           </ion-label>
           <div class="underline" *ngIf="selectedTab == 'Events'"></div>
@@ -35,7 +35,7 @@
 
 
         <button class="tab" (click)="onTabSelectionChange('Create Event')">
-          <ion-label>
+          <ion-label id="createTab">
             Create Event
           </ion-label>
           <div class="underline" *ngIf="selectedTab == 'Create Event'"></div>
@@ -104,7 +104,7 @@
   </div>
 
 
-  <!--zoom buttons-->
+  <!-- zoom buttons
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="zoomIn()" class="zoomButton">
       <ion-icon name="add" class="zoomIcon"></ion-icon>
@@ -112,7 +112,7 @@
     <ion-fab-button (click)="zoomOut()" class="zoomButton">
       <ion-icon name="remove-outline" class="zoomIcon"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
   
 
 
