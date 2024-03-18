@@ -17,7 +17,7 @@
     <h2 *ngIf="pageIndex == 0">A Social App for 60+</h2>
   </div>
   <div class="bottom" *ngIf="pageIndex == 0">
-    <h1>Before entering the app, let's get to know your interests!</h1>
+    <h2 class="whiteText">Before entering the app, let's get to know your interests!</h2>
     <ion-button *ngIf="pageIndex == 0" (click)="forward()">Continue</ion-button>
     <ion-button (click)="presentAlert()">Skip</ion-button>
   </div>
@@ -83,9 +83,9 @@
     </ion-button>
   </div> -->
 
-  <h3 *ngIf="pageIndex == 0"> page 1 of 3</h3>
-  <h3 *ngIf="pageIndex == 1">page 2 of 3</h3>
-  <h3 *ngIf="pageIndex == 2">page 3 of 3</h3>
+  <h3 class="whiteText" *ngIf="pageIndex == 0"> page 1 of 3</h3>
+  <h3 class="whiteText" *ngIf="pageIndex == 1">page 2 of 3</h3>
+  <h3 class="whiteText" *ngIf="pageIndex == 2">page 3 of 3</h3>
 
   <!--zoom buttons-->
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">

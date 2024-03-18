@@ -21,6 +21,10 @@ h2 {
     margin-right: 15px;
 }
 
+.whiteText {
+    color: white;
+}
+
 h3 {
     font-size: calc(var(--h3-font-size) * var(--zoom-factor)) !important;
     text-align: center;
@@ -56,6 +60,7 @@ ion-label {
 
 .top {
     margin-top: 15vh;
+    
 }
 
 .bottom {
